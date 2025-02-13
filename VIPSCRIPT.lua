@@ -247,7 +247,7 @@ q = gg.choice({
 "MEMORY FEATURES",
 "IN-GAME FEATURES",
 "EXIT",
-},nil," SHADOW PREMIUM CHEAT SCRIPT  \nBY:@PIR4T3H4X ")
+},nil," SHADOW PREMIUM CHEAT SCRIPT  \nBY:@SHADOWH4XX ")
 if q == nil then else
 if q == 1 then A1() end
 if q == 2 then A2() end
