@@ -260,7 +260,7 @@ function A1()
 w = gg.multiChoice({
 "BYPASS LOGO",
 "SKIP TUTORIAL",
-},nil," SHADOW PREMIUM CHEAT SCRIPT  \nBY:@PIR4T3H4X ")
+},nil," SHADOW PREMIUM CHEAT SCRIPT  \nBY:@SHADOWH4XX ")
 if w == nil then else
 if w[1] == true then lobby() end
 if w[2] == true then skipt() end
@@ -307,7 +307,7 @@ end
 function A2() 
 e = gg.prompt({
 "☠️ AIMBOT ALL GUNS [ADJUSTABLE]",
-"☠️ WALLHACK RED/BLUE/YELLOW",
+"☠️ WALLHACK RED",
 "☠️ NO SPREAD",
 "☠️ NO RELOAD",
 "☠️ EXPANDED HITBOX",
