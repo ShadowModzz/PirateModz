@@ -277,7 +277,7 @@ HexPatches.PirateMODZ("libunity.so", 0x31A65DC, "h58000050", 4);
 HexPatches.PirateMODZ("libunity.so", 0x31A65E0, "hD61F0200", 4);
 HexPatches.PirateMODZ("libunity.so", 0x31A65E4, "h1AD95510", 4);
 HexPatches.PirateMODZ("libunity.so", 0x31A65E8, "h6F", 4);
-HexPatches.PirateMODZ("libanogs.so", 0x118a28, "h00 00 80 D2 C0 03 5F D6", 32);
+--HexPatches.PirateMODZ("libanogs.so", 0x118a28, "h00 00 80 D2 C0 03 5F D6", 32);
 HexPatches.PirateMODZ("libanogs.so", 0x134770, "h00 00 80 D2 C0 03 5F D6", 32);
 HexPatches.PirateMODZ("libanogs.so", 0x134ef8, "h00 00 80 D2 C0 03 5F D6", 32);
 HexPatches.PirateMODZ("libanogs.so", 0x142f50, "h00 00 80 D2 C0 03 5F D6", 32);
