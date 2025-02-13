@@ -271,16 +271,26 @@ end
 
 function lobby()
                                --FIXCRASH
-HexPatches.PirateMODZ("libanogs.so", 0x17E640, "h 00 00 80 D2 C0 03 5F D6", 32);
+--HexPatches.PirateMODZ("libanogs.so", 0x17E640, "h 00 00 80 D2 C0 03 5F D6", 32);
                                  --FIX AUTOBAN
 HexPatches.PirateMODZ("libunity.so", 0x31A65DC, "h58000050", 4);
 HexPatches.PirateMODZ("libunity.so", 0x31A65E0, "hD61F0200", 4);
 HexPatches.PirateMODZ("libunity.so", 0x31A65E4, "h1AD95510", 4);
 HexPatches.PirateMODZ("libunity.so", 0x31A65E8, "h6F", 4);
+HexPatches.PirateMODZ("libanogs.so", 0x118a28, "h00 00 80 D2 C0 03 5F D6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x134770, "h00 00 80 D2 C0 03 5F D6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x134ef8, "h00 00 80 D2 C0 03 5F D6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x142f50, "h00 00 80 D2 C0 03 5F D6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x1afa98, "h00 00 80 D2 C0 03 5F D6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x1bb9e8, "h00 00 80 D2 C0 03 5F D6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x1bd380, "h00 00 80 D2 C0 03 5F D6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x1d9748, "h00 00 80 D2 C0 03 5F D6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x240178, "h00 00 80 D2 C0 03 5F D6", 32)
+HexPatches.PirateMODZ("libanogs.so", 0x2b58c0, "h00 00 80 D2 C0 03 5F D6", 32);	
 --HexPatches.PirateMODZ("libanogs.so", 0x2C56D8, "h 00 00 80 D2 C0 03 5F D6", 32);
 --HexPatches.PirateMODZ("libanogs.so", 0x246F2C, "h 00 00 80 D2 C0 03 5F D6", 32);
---HexPatches.PirateMODZ("libanogs.so", 0x243FEC, "h 00 00 80 D2 C0 03 5F D6", 32);
---HexPatches.PirateMODZ("libanogs.so", 0x242F2C, "h 00 00 80 D2 C0 03 5F D6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x243FEC, "h 00 00 80 D2 C0 03 5F D6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x242F2C, "h 00 00 80 D2 C0 03 5F D6", 32);
     
                                   
 gg.toast("Bypass Activated")
