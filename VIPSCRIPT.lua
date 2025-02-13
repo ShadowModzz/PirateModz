@@ -1,3 +1,194 @@
+function lq()
+gg.toast("SHADOW MODZ OFFICIAL")
+function unXXX(str64)
+    local b64chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
+    local temp={}
+    for i=1,64 do
+        temp[string.sub(b64chars,i,i)] = i
+    end
+    temp['=']=0
+    local str=""
+    for i=1,#str64,4 do
+        if i>#str64 then
+            break
+        end
+        local data = 0
+        local str_count=0
+        for j=0,3 do
+            local str1=string.sub(str64,i+j,i+j)
+            if not temp[str1] then
+                return
+            end
+            if temp[str1] < 1 then
+                data = data * 64
+            else
+                data = data * 64 + temp[str1]-1
+                str_count = str_count + 1
+            end
+        end
+        for j=16,0,-8 do
+            if str_count > 0 then
+                str=str..string.char(math.floor(data/math.pow(2,j)))
+                data=math.fmod(data,math.pow(2,j))
+                str_count = str_count - 1
+            end
+        end
+    end
+ 
+    local last = tonumber(string.byte(str, string.len(str), string.len(str)))
+    if last == 0 then
+        str = string.sub(str, 1, string.len(str) - 1)
+    end
+    ddd=str
+end
+ lqSJ = math.random(2685355,99999999)
+ lqc=io.open('/storage/emulated/0/.65631682_1','r')
+ if lqc == nil then
+   lqc=io.open('/storage/emulated/0/Android/.65631682_int','w')
+   lqc:write(lqSJ*6-967)
+   lqc=io.open('/storage/emulated/0/.65631682_1','w')
+   lqc:write(lqSJ*6-967)
+   lqd = io.open('/storage/emulated/0/Android/.65631682_int','r')
+   lqdm = lqd:read('*a')
+   lqd:close()
+ else
+  abc=io.open('/storage/emulated/0/Android/.65631682_int','w')
+  if abc == nil then
+   lqdd = io.open('/storage/emulated/0/.65631682_1','r')
+   lqdmm = lqdd:read('*a')
+   lqdd:close()
+   lqd = io.open('/storage/emulated/0/Android/.65631682_int','w')
+   lqd:write(lqdmm)
+   lqd:close()
+   end
+   lqd = io.open('/storage/emulated/0/Android/.65631682_int','r')
+   lqdm = lqd:read('*a')
+   lqd:close()
+   lqdd = io.open('/storage/emulated/0/.65631682_1','r')
+   lqdmm = lqdd:read('*a')
+   lqdd:close()
+   yanzheng = lqdm == lqdmm
+   if yanzheng == true then print("") else
+   lqd = io.open('/storage/emulated/0/Android/.65631682_int','w')
+   lqd:write(lqdmm)
+   lqd:close()
+   end
+   lqd = io.open('/storage/emulated/0/Android/.65631682_int','r')
+   lqdm = lqd:read('*a')
+   lqd:close()
+ end
+ lqdm = (lqdm + 967)/6
+ lqs = io.open('/storage/emulated/0/Android/.65631682_1_dll','r')
+ if lqs == nil then
+   lqsa=gg.alert('Enter Your Password:','Yes','Exit')
+   if lqsa ~= 1 then print('Wrong') os.exit()
+   else
+     lqv = gg.prompt({'Enter Password:','Your Phone Code: ' .. lqdm},{[1]='',[2]= lqdm },{[1] = 'text',[2] = 'text'})
+     if lqv == nil then print('Error') os.exit() end
+     if lqv[1] == '' then print('Dont Empty') os.exit() end
+     unXXX(lqv[1])
+     local lqB = ddd
+     local lqC = lqdm
+     if lqv[1]==ddd then gg.toast('Please Enter the Correct Password') os.exit() end
+     pd = tonumber(lqB)
+     if pd ~= lqB then gg.toast('Please Enter the Correct Password') os.exit() end
+     lqD = pd
+     lqA = lqD
+     unXXX("Mjc0MTgw")
+          zcj = tonumber(ddd)
+     if zcj ~= ddd then gg.toast('Wrong Key') os.exit() end
+     aaa = (3*lqdm+zcj)..''
+     bbb = (7*lqdm+zcj)..''
+     ccc = (15*lqdm+zcj)..''
+     ddd = (30*lqdm+zcj)..''
+     eee = (5000*lqdm+zcj)..''
+     if lqA == aaa then
+     aaaa = 3
+     gg.alert(' 3Days Key ','Yes')
+     else
+       if lqA == bbb then
+       aaaa = 7
+       gg.alert(' 7Days Key ','Yes')
+       else
+       if lqA == ccc then
+       aaaa = 15
+       gg.alert(' 15Days Key ','Yes')
+       else
+         if lqA == ddd then
+         aaaa = 30
+         gg.alert(' 30Days Key ','Yes')
+         else
+         if lqA == eee then
+         aaaa = 5000
+         gg.alert(' Lifetime Key ','Yes')
+         else
+           gg.alert(' Wrong Password ') os.exit()
+         end
+       end
+     end
+   end
+   end
+   end
+   ms = aaaa*24*60*60
+   Yz = ((os.time() + ms)*lqdm)+lqdm..''
+   Yza = Yz
+   Yzb =io.open('/storage/emulated/0/Android/.65631682_1_dll','w')
+   Yzb:write(Yza)
+   Yzb:close()
+   Yzb =io.open('/storage/emulated/0/.65631682_2','w')
+   Yzb:write(100000000-(Yza-lqdm))
+   Yzb:close()
+ else
+   Yzb =io.open('/storage/emulated/0/.65631682_2','r')
+   if Yzb == nil then
+   os.remove("/storage/emulated/0/.65631682_2")    
+   os.remove("/storage/emulated/0/Android/.65631682_1_dll")
+   os.remove("/storage/emulated/0/.65631682_1")    
+   os.remove("/storage/emulated/0/Android/.65631682_int")
+   os.exit()
+   end
+   YZZZ=Yzb:read('*a')
+   Yzb:close()
+   Yzd=io.open('/storage/emulated/0/Android/.65631682_1_dll','r')
+   Yzda=Yzd:read('*a')
+   Yzd:close()
+   YZYZ=Yzda-lqdm+YZZZ
+   if YZYZ ~=100000000 then
+   os.remove("/storage/emulated/0/.65631682_2")    
+   os.remove("/storage/emulated/0/Android/.65631682_1_dll")
+   os.remove("/storage/emulated/0/.65631682_1")    
+   os.remove("/storage/emulated/0/Android/.65631682_int")
+   print("my Script")
+   os.exit()
+   end
+   Yzd=io.open('/storage/emulated/0/Android/.65631682_1_dll','r')
+   Yzda=Yzd:read('*a')
+   Yzd:close()
+   Yzf = os.time()
+   Yzda = (Yzda-lqdm)/lqdm
+   YZZ = Yzda
+   YZA = (Yzda - Yzf)/3600/24
+   YZB = YZA*24*3600
+    YZC = (Yzda - Yzf -YZB)/60/60
+    YZD = YZC*3600
+    YZE = (Yzda - Yzf -YZB - YZD)/60
+    YZF = YZE*60
+    YZG = Yzda - Yzf -YZB - YZD -YZF
+   if Yzda > Yzf then gg.alert('Confirmed Expire Time: '.. YZA ..'d' .. YZC .. 'h' .. YZE .. 'm' .. YZG .. 's')
+     else
+       gg.alert('You need to buy key again!')
+   os.remove("/storage/emulated/0/.65631682_2")    
+   os.remove("/storage/emulated/0/Android/.65631682_1_dll")
+   os.remove("/storage/emulated/0/.65631682_1")    
+   os.remove("/storage/emulated/0/Android/.65631682_int")
+       os.exit()
+     end
+ end
+end
+lq()
+
+
+
 local xCy26, xVgF62 = tonumber, string.char
 local FVca6, Sn62V = table.unpack, table.concat
 local function GfGv9KpLzQ(a) return xVgF62(FVca6(a)) end
