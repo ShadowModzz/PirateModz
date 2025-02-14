@@ -258,7 +258,7 @@ ShadowMODZ = -1
 end
 function A1() 
 w = gg.multiChoice({
-"BYPASS LOGO",
+"BYPASS (Loading 99%)",
 "SKIP TUTORIAL",
 },nil," SHADOW PREMIUM CHEAT SCRIPT  \nBY:@SHADOWH4XX ")
 if w == nil then else
@@ -271,18 +271,22 @@ end
 
 function lobby()
                                --FIXCRASH
-HexPatches.PirateMODZ("libanogs.so", 0x17E640, "h 00 00 80 D2 C0 03 5F D6", 32);
-                                 --FIX AUTOBAN
-HexPatches.PirateMODZ("libanogs.so", 0x118a28, "h00 00 80 D2 C0 03 5F D6", 32);
-HexPatches.PirateMODZ("libanogs.so", 0x134770, "h00 00 80 D2 C0 03 5F D6", 32);
-HexPatches.PirateMODZ("libanogs.so", 0x134ef8, "h00 00 80 D2 C0 03 5F D6", 32);
-HexPatches.PirateMODZ("libanogs.so", 0x142f50, "h00 00 80 D2 C0 03 5F D6", 32);
-HexPatches.PirateMODZ("libanogs.so", 0x1afa98, "h00 00 80 D2 C0 03 5F D6", 32);
-HexPatches.PirateMODZ("libanogs.so", 0x1bb9e8, "h00 00 80 D2 C0 03 5F D6", 32);
-HexPatches.PirateMODZ("libanogs.so", 0x1bd380, "h00 00 80 D2 C0 03 5F D6", 32);
-HexPatches.PirateMODZ("libanogs.so", 0x1d9748, "h00 00 80 D2 C0 03 5F D6", 32);
-HexPatches.PirateMODZ("libanogs.so", 0x240178, "h00 00 80 D2 C0 03 5F D6", 32);
-HexPatches.PirateMODZ("libanogs.so", 0x2b58c0, "h00 00 80 D2 C0 03 5F D6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x174B50, "h 00 00 80 D2 C0 03 5F D6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x239DEC, "h 00 00 80 D2 C0 03 5F D6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x23C02C, "h 00 00 80 D2 C0 03 5F D6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x23C584, "h 00 00 80 D2 C0 03 5F D6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x23D6C8, "h 00 00 80 D2 C0 03 5F D6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x23DFCC, "h 00 00 80 D2 C0 03 5F D6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x23F7EC, "h 00 00 80 D2 C0 03 5F D6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x23FB08, "h 00 00 80 D2 C0 03 5F D6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x240DA8, "h 00 00 80 D2 C0 03 5F D6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x241E10, "h 00 00 80 D2 C0 03 5F D6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x242F2C, "h 00 00 80 D2 C0 03 5F D6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x22957C, "h 00 00 80 D2 C0 03 5F D6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x22B644, "h 00 00 80 D2 C0 03 5F D6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x2CDCF4, "h 00 00 80 D2 C0 03 5F D6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x25F9BC, "h 00 00 80 D2 C0 03 5F D6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x2AFB68, "h 00 00 80 D2 C0 03 5F D6", 32);
 HexPatches.PirateMODZ("libanogs.so", 0x204D48, "h 00 00 80 D2 C0 03 5F D6", 32);
 HexPatches.PirateMODZ("libanogs.so", 0x206D84, "h 00 00 80 D2 C0 03 5F D6", 32);
 HexPatches.PirateMODZ("libanogs.so", 0x209C68, "h 00 00 80 D2 C0 03 5F D6", 32);
