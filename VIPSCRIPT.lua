@@ -1,191 +1,1703 @@
-function lq()
-gg.toast("SHADOW MODZ OFFICIAL")
-function unXXX(str64)
-    local b64chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-    local temp={}
-    for i=1,64 do
-        temp[string.sub(b64chars,i,i)] = i
-    end
-    temp['=']=0
-    local str=""
-    for i=1,#str64,4 do
-        if i>#str64 then
-            break
-        end
-        local data = 0
-        local str_count=0
-        for j=0,3 do
-            local str1=string.sub(str64,i+j,i+j)
-            if not temp[str1] then
-                return
-            end
-            if temp[str1] < 1 then
-                data = data * 64
-            else
-                data = data * 64 + temp[str1]-1
-                str_count = str_count + 1
-            end
-        end
-        for j=16,0,-8 do
-            if str_count > 0 then
-                str=str..string.char(math.floor(data/math.pow(2,j)))
-                data=math.fmod(data,math.pow(2,j))
-                str_count = str_count - 1
-            end
-        end
-    end
- 
-    local last = tonumber(string.byte(str, string.len(str), string.len(str)))
-    if last == 0 then
-        str = string.sub(str, 1, string.len(str) - 1)
-    end
-    ddd=str
+
+    vibra = context:getSystemService(Context.VIBRATOR_SERVICE)
+function getCorner(gtvb1,gtvb3,gtvb4,gtvb5,g1,g2,g3,g4)
+if not gtvb4 then gtvb4 = 0 gtvb5 = 0xff000000 end 
+local jianbians = luajava.new(GradientDrawable)
+jianbians:setCornerRadius(gtvb3)
+jianbians:setGradientType(GradientDrawable.LINEAR_GRADIENT)
+jianbians:setColors(gtvb1)
+jianbians:setStroke(gtvb4,gtvb5)--边框宽度和颜色
+jianbians:setCornerRadii({g1,g1,g2,g2,g3,g3,g4,g4})
+return jianbians
 end
- lqSJ = math.random(2685355,99999999)
- lqc=io.open('/storage/emulated/0/.65631682_1','r')
- if lqc == nil then
-   lqc=io.open('/storage/emulated/0/Android/.65631682_int','w')
-   lqc:write(lqSJ*6-967)
-   lqc=io.open('/storage/emulated/0/.65631682_1','w')
-   lqc:write(lqSJ*6-967)
-   lqd = io.open('/storage/emulated/0/Android/.65631682_int','r')
-   lqdm = lqd:read('*a')
-   lqd:close()
- else
-  abc=io.open('/storage/emulated/0/Android/.65631682_int','w')
-  if abc == nil then
-   lqdd = io.open('/storage/emulated/0/.65631682_1','r')
-   lqdmm = lqdd:read('*a')
-   lqdd:close()
-   lqd = io.open('/storage/emulated/0/Android/.65631682_int','w')
-   lqd:write(lqdmm)
-   lqd:close()
-   end
-   lqd = io.open('/storage/emulated/0/Android/.65631682_int','r')
-   lqdm = lqd:read('*a')
-   lqd:close()
-   lqdd = io.open('/storage/emulated/0/.65631682_1','r')
-   lqdmm = lqdd:read('*a')
-   lqdd:close()
-   yanzheng = lqdm == lqdmm
-   if yanzheng == true then print("") else
-   lqd = io.open('/storage/emulated/0/Android/.65631682_int','w')
-   lqd:write(lqdmm)
-   lqd:close()
-   end
-   lqd = io.open('/storage/emulated/0/Android/.65631682_int','r')
-   lqdm = lqd:read('*a')
-   lqd:close()
- end
- lqdm = (lqdm + 967)/6
- lqs = io.open('/storage/emulated/0/Android/.65631682_1_dll','r')
- if lqs == nil then
-   lqsa=gg.alert('Enter Your Password:','Yes','Exit')
-   if lqsa ~= 1 then print('Wrong') os.exit()
-   else
-     lqv = gg.prompt({'Enter Password:','Your Phone Code: ' .. lqdm},{[1]='',[2]= lqdm },{[1] = 'text',[2] = 'text'})
-     if lqv == nil then print('Error') os.exit() end
-     if lqv[1] == '' then print('Dont Empty') os.exit() end
-     unXXX(lqv[1])
-     local lqB = ddd
-     local lqC = lqdm
-     if lqv[1]==ddd then gg.toast('Please Enter the Correct Password') os.exit() end
-     pd = tonumber(lqB)
-     if pd ~= lqB then gg.toast('Please Enter the Correct Password') os.exit() end
-     lqD = pd
-     lqA = lqD
-     unXXX("Mjc0MTgw")
-          zcj = tonumber(ddd)
-     if zcj ~= ddd then gg.toast('Wrong Key') os.exit() end
-     aaa = (3*lqdm+zcj)..''
-     bbb = (7*lqdm+zcj)..''
-     ccc = (15*lqdm+zcj)..''
-     ddd = (30*lqdm+zcj)..''
-     eee = (5000*lqdm+zcj)..''
-     if lqA == aaa then
-     aaaa = 3
-     gg.alert(' 3Days Key ','Yes')
-     else
-       if lqA == bbb then
-       aaaa = 7
-       gg.alert(' 7Days Key ','Yes')
-       else
-       if lqA == ccc then
-       aaaa = 15
-       gg.alert(' 15Days Key ','Yes')
-       else
-         if lqA == ddd then
-         aaaa = 30
-         gg.alert(' 30Days Key ','Yes')
-         else
-         if lqA == eee then
-         aaaa = 5000
-         gg.alert(' Lifetime Key ','Yes')
-         else
-           gg.alert(' Wrong Password ') os.exit()
-         end
-       end
-     end
-   end
-   end
-   end
-   ms = aaaa*24*60*60
-   Yz = ((os.time() + ms)*lqdm)+lqdm..''
-   Yza = Yz
-   Yzb =io.open('/storage/emulated/0/Android/.65631682_1_dll','w')
-   Yzb:write(Yza)
-   Yzb:close()
-   Yzb =io.open('/storage/emulated/0/.65631682_2','w')
-   Yzb:write(100000000-(Yza-lqdm))
-   Yzb:close()
- else
-   Yzb =io.open('/storage/emulated/0/.65631682_2','r')
-   if Yzb == nil then
-   os.remove("/storage/emulated/0/.65631682_2")    
-   os.remove("/storage/emulated/0/Android/.65631682_1_dll")
-   os.remove("/storage/emulated/0/.65631682_1")    
-   os.remove("/storage/emulated/0/Android/.65631682_int")
-   os.exit()
-   end
-   YZZZ=Yzb:read('*a')
-   Yzb:close()
-   Yzd=io.open('/storage/emulated/0/Android/.65631682_1_dll','r')
-   Yzda=Yzd:read('*a')
-   Yzd:close()
-   YZYZ=Yzda-lqdm+YZZZ
-   if YZYZ ~=100000000 then
-   os.remove("/storage/emulated/0/.65631682_2")    
-   os.remove("/storage/emulated/0/Android/.65631682_1_dll")
-   os.remove("/storage/emulated/0/.65631682_1")    
-   os.remove("/storage/emulated/0/Android/.65631682_int")
-   print("my Script")
-   os.exit()
-   end
-   Yzd=io.open('/storage/emulated/0/Android/.65631682_1_dll','r')
-   Yzda=Yzd:read('*a')
-   Yzd:close()
-   Yzf = os.time()
-   Yzda = (Yzda-lqdm)/lqdm
-   YZZ = Yzda
-   YZA = (Yzda - Yzf)/3600/24
-   YZB = YZA*24*3600
-    YZC = (Yzda - Yzf -YZB)/60/60
-    YZD = YZC*3600
-    YZE = (Yzda - Yzf -YZB - YZD)/60
-    YZF = YZE*60
-    YZG = Yzda - Yzf -YZB - YZD -YZF
-   if Yzda > Yzf then gg.alert('Confirmed Expire Time: '.. YZA ..'d' .. YZC .. 'h' .. YZE .. 'm' .. YZG .. 's')
-     else
-       gg.alert('You need to buy key again!')
-   os.remove("/storage/emulated/0/.65631682_2")    
-   os.remove("/storage/emulated/0/Android/.65631682_1_dll")
-   os.remove("/storage/emulated/0/.65631682_1")    
-   os.remove("/storage/emulated/0/Android/.65631682_int")
-       os.exit()
-     end
- end
+function getVerticalBG(gtvb1,gtvb3,gtvb4,gtvb5)
+if not gtvb4 then gtvb4 = 0 gtvb5 = 0xff000000 end 
+local jianbians = luajava.new(GradientDrawable)
+jianbians:setCornerRadius(gtvb3)
+jianbians:setGradientType(GradientDrawable.LINEAR_GRADIENT)
+jianbians:setColors(gtvb1)
+jianbians:setStroke(gtvb4,gtvb5)--边框宽度和颜色
+return jianbians
 end
-lq()
+changan = {}
+local changan = changan
+local android = import('android.*')
+function panduan(rec) fille,err = io.open(rec) if fille == nil then return false else return true end end
+function pdcf(lujing) rec = "/sdcard/Starcool/"..lujing fille,err = io.open(rec) if fille == nil then return false else return true end end
+sleep = gg.sleep
+function read(fileName) f = assert(io.open(fileName, 'r')) content = f:read("*all") f:close() return content end
+function wtcf(lujing,neirong)
+write("/sdcard/Starcool/"..lujing,neirong)
+end
+function rdcf(lujing)
+return read("/sdcard/Starcool/"..lujing)
+end
+
+开 = "开" 关 = "关"
+function checkimg(tmp,ii)
+if file.length("/sdcard/Starcool/"..tmp[1],false)<200 then
+gg.toast("LOADING"..ii.."/"..#ckimg.."\nFILE")
+luajava.download(tmp[2],"/sdcard/Starcool/"..tmp[1])
+end
+end
+ckimg = {
+	{'Direct','https://chuxinya.top/f/48ZlHl/Direct.zip'},
+	
+	
+}
+for i = 1,#ckimg do
+jindu = i
+checkimg(ckimg[i],i)
+end
+function 获取图片(txt)
+txt = string.url(txt,"de")
+ntxt = string.sub(string.gsub(txt,"/","-"),-10,-1)
+if string.find(tostring(txt),"http") ~= nil then
+if panduan("/sdcard/Starcool/"..ntxt) == false then
+file.download(txt,"/sdcard/Starcool/"..ntxt)
+else
+	if file.length("/sdcard/Starcool/"..ntxt) <= 1 then
+file.download(txt,"/sdcard/Starcool/"..ntxt)
+end
+end
+txt = "/sdcard/Starcool/"..ntxt
+end
+if getting then gettingp[#gettingp+1]=txt end
+return luajava.getBitmapDrawable(txt)
+end
+function 获取图片3(txt)
+txt = string.url(txt,"de")
+ntxt = string.sub(string.gsub(txt,"/","-"),-10,-1)
+if string.find(tostring(txt),"http") ~= nil then
+if panduan("/sdcard/Starcool/"..ntxt) == false then
+file.download(txt,"/sdcard/Starcool/"..ntxt)
+else
+	if file.length("/sdcard/Starcool/"..ntxt) <= 1 then
+file.download(txt,"/sdcard/Starcool/"..ntxt)
+end
+end
+txt = "/sdcard/Starcool/"..ntxt
+end
+return luajava.getBitmapDrawable(txt)
+end
+unzip("sdcard/Starcool/Direct","sdcard/Starcool/")
+local function getRes(x)
+return 获取图片("/sdcard/Starcool/"..x)
+end
+context = app.context
+window = context:getSystemService("window") -- 获取窗口管理器
+function getLayoutParams()
+LayoutParams = WindowManager.LayoutParams
+layoutParams = luajava.new(LayoutParams)
+if (Build.VERSION.SDK_INT >= 26) then -- 设置悬浮窗方式
+layoutParams.type = LayoutParams.TYPE_APPLICATION_OVERLAY
+else
+	layoutParams.type = LayoutParams.TYPE_PHONE
+end
+
+layoutParams.format = PixelFormat.RGBA_8888 -- 设置背景
+layoutParams.flags = LayoutParams.FLAG_NOT_FOCUSABLE -- 焦点设置Finish
+layoutParams.gravity = Gravity.TOP|Gravity.LEFT -- 重力设置
+layoutParams.width = LayoutParams.WRAP_CONTENT -- 布局宽度
+layoutParams.height = LayoutParams.WRAP_CONTENT -- 布局高度
+
+return layoutParams
+end
+function getj6()
+jianbian6 = luajava.new(GradientDrawable)
+jianbian6:setCornerRadius(20)
+jianbian6:setGradientType(GradientDrawable.LINEAR_GRADIENT)
+jianbian6:setColors({
+	0xff2F3032,0xff2F3032
+})
+jianbian6:setStroke(0,"0xddffffff")--边框宽度和颜色
+return jianbian6
+end
+function getj7()
+jianbian6 = luajava.new(GradientDrawable)
+jianbian6:setCornerRadius(20)
+jianbian6:setGradientType(GradientDrawable.LINEAR_GRADIENT)
+jianbian6:setColors({
+	0x002F3032,0x002F3032
+})
+jianbian6:setStroke(3,"0xff0091FE")--边框宽度和颜色
+return jianbian6
+end
+hanshu = function(v, event)
+local Action = event:getAction()
+if Action == MotionEvent.ACTION_DOWN then
+isMove = false
+RawX = event:getRawX()
+RawY = event:getRawY()
+x = mainLayoutParams.x
+y = mainLayoutParams.y
+elseif Action == MotionEvent.ACTION_MOVE then
+isMove = true
+
+mainLayoutParams.x = tonumber(x) + (event:getRawX() - RawX)
+if mainLayoutParams.x<=0 then
+	mainLayoutParams.x=0
+	if 显示==0 and 显2==false then 隐藏2() end
+end
+if mainLayoutParams.x>=20 then
+	if 显2==true then 显示2() end
+end
+mainLayoutParams.y = tonumber(y) + (event:getRawY() - RawY)
+window:updateViewLayout(floatWindow, mainLayoutParams)
+end
+end
+--backround kiri
+slcta = getVerticalBG({0xf5191919,0xf5191919},13,2,0xff000000)
+
+slctc = luajava.loadlayout {
+	GradientDrawable,
+	color = "#11ffffff",
+	cornerRadius = 8
+}
+slctd = luajava.loadlayout {
+	GradientDrawable,
+	color = "#55ffffff",
+	cornerRadius = 8
+}
+slcte = luajava.loadlayout {
+	GradientDrawable,
+	color = "#11ffffff",
+	cornerRadius = 12
+}
+slctf = luajava.loadlayout {
+	GradientDrawable,
+	color = "#aa1E1C27",
+	cornerRadius = 12
+}
+function getSelector3()
+jianbians = luajava.new(GradientDrawable)
+jianbians:setCornerRadius(10)
+jianbians:setGradientType(GradientDrawable.LINEAR_GRADIENT)
+jianbians:setColors({
+	0xff000000,0x660072ff
+})
+jianbians:setStroke(2,"0xddFFffff")--边框宽度和颜色
+
+selector = luajava.getStateListDrawable()
+selector:addState({
+	android.R.attr.state_pressed
+}, luajava.loadlayout {
+	GradientDrawable,
+	color = "#88000000",
+	cornerRadius = 12
+}) -- 点击时候的背景
+selector:addState({
+	-android.R.attr.state_pressed
+}, jianbians) -- 没点击的背景
+return selector
+end
+function getSelector()
+selector = luajava.getStateListDrawable()
+selector:addState({
+	android.R.attr.state_pressed
+}, slcta) -- 点击时候的背景
+selector:addState({
+	-android.R.attr.state_pressed
+}, slctb) -- 没点击的背景
+return selector
+end
+function getSelector2()
+selector = luajava.getStateListDrawable()
+selector:addState({
+	android.R.attr.state_pressed
+}, slctd) -- 点击时候的背景
+selector:addState({
+	-android.R.attr.state_pressed
+}, slctc) -- 没点击的背景
+return selector
+end
+
+jianbian = luajava.new(GradientDrawable)
+jianbian:setCornerRadius(30)
+jianbian:setGradientType(GradientDrawable.LINEAR_GRADIENT)
+jianbian2 = luajava.new(GradientDrawable)
+jianbian2:setCornerRadius(30)
+jianbian2:setGradientType(GradientDrawable.LINEAR_GRADIENT)
+
+local isswitch
+YoYoImpl = luajava.getYoYoImpl()
+changan.menu = function(sview)
+if isswitch then
+return false
+end
+isswitch = true
+cebian = {
+	LinearLayout, 
+	orientation = "vertical",
+}
+for i = 1,#stab do
+cebian[#cebian+1] = {
+	LinearLayout, 
+	id = "jm"..i,
+	layout_height = "25dp",
+	layout_width = "88dp",
+	layout_margin = "3dp",
+	background = slcta,
+	gravity = "center",
+	onClick = function() 切换(i) end,
+	{
+		TextView,
+		text = stab[i],
+		textSize='11sp',
+		textColor='#ffffff',
+		gravity = "center",
+		
+	}}
+end
+cebian = luajava.loadlayout(cebian)
+for i = 1,#stab do
+_ENV["layout"..i] = luajava.loadlayout({
+	ScrollView,
+	fillViewport = "true",
+--padding = "10dp",
+	id = "layout"..i,
+	visibility = "gone",
+	gravity = "center",
+	layout_width = "250dp",
+	layout_height = "230dp",
+	orientation = "horizontal",
+	background = getVerticalBG({0xf5191919,0xf5191919},18,3,0xf5191919),
+	{
+		LinearLayout, 
+		id = "layoutm"..i,
+		
+		layout_margin = "3dp",
+		layout_marginLeft = "5dp",
+		layout_width = "240dp",
+		orientation = "vertical",
+		gravity = "center_horizontal",
+	}
+})
+end
+ckou = {
+	LinearLayout, 
+	id = "chuangk",
+	layout_width = "wrap_content",
+	layout_height = "wrap_content",
+	orientation = "horizontal",
+	padding='3dp',
+	{
+		LinearLayout, 
+		orientation = "vertical",
+		padding = "2dp",
+		layout_height='match_parent',
+		background=getVerticalBG({0xff000000,0xff000000},18,3,0xff000000),
+		{
+			LinearLayout, 
+			gravity = "center",
+			{
+    ImageView,
+    id = "control",
+    background = 获取图片(左上角图标),
+    layout_width = "85dp",
+    layout_height = "67dp",
+    layout_marginLeft = "center", -- Tambahkan margin kiri
+    onClick = 隐藏,
+    onTouch = hanshu
+}
+
+		},
+		{LinearLayout, 
+			layout_height='1dp',
+			layout_width='match_parent',
+			background='#ff7200ff',
+			layout_margin='1dp',
+			
+		},
+		cebian,
+	},{LinearLayout, 
+		layout_width='4dp',
+	}
+	
+}
+for i = 1,#stab do
+ckou[#ckou+1] = _ENV["layout"..i]
+end
+ckou = luajava.loadlayout(ckou)
+floatWindow = {
+	LinearLayout, 
+	id = "motion",
+	onClick=function() end,
+	visibility='gone',
+	onTouch=hanshu,
+	background=beij,
+	layout_width = "wrap_content",
+	orientation = "vertical",
+	gravity = "center_vertical",
+	layout_height = "wrap_content",
+	ckou,
+	{ImageView,
+	layout_height='46dp',
+	layout_width='90dp',
+	id='xfc',
+	visibility='gone',
+	onClick=隐藏,
+	onTouch=hanshu,
+	background=获取图片(小悬浮窗图标),
+	},{LinearLayout, 
+	id="smallc",
+	visibility="gone",
+	onClick=显示2,
+	onTouch=hanshu,
+	layout_height="70dp",
+	layout_width="20dp",
+	gravity="center",
+	background=getCorner({0x88161616,0x88161616},12,0,0xff232323,0,15,15,0),
+		
+	}
+}
+local function invoke()
+local ok
+local RawX, RawY, x, y
+mainLayoutParams = getLayoutParams()
+floatWindow = luajava.loadlayout(floatWindow)
+local function invoke2()
+block('start')
+for k = 1,#stab do
+for i = 1,#sview[k] do
+_ENV["layoutm"..k]:addView(sview[k][i])
+end
+end
+
+window:addView(floatWindow, mainLayoutParams)
+block('end')
+end
+
+local runnable = luajava.getRunnable(invoke2)
+local handler = luajava.getHandler()
+handler:post(runnable)
+block('join')
+
+
+local isMove
+
+
+end
+
+invoke(swib1,swib2)
+切换(1)
+luajava.runUiThread(function()
+	floatWindow:setVisibility(View.VISIBLE)
+	changan.controlBig(floatWindow,800)
+end)
+gg.setVisible(false)
+luajava.setFloatingWindowHide(true)
+
+end
+function getseekgra()
+jianbians = luajava.new(GradientDrawable)
+jianbians:setCornerRadius(10)
+jianbians:setGradientType(GradientDrawable.LINEAR_GRADIENT)
+jianbians:setColors({
+	0xff000000,0x660072ff
+})
+jianbians:setStroke(2,"0x44ffffff")--边框宽度和颜色
+
+return jianbians
+end
+corbk = true
+当前ui = 1
+function 切换(x)
+当前ui = x
+luajava.runUiThread(function()
+	for i = 1,#stab do
+	
+	_ENV["layout"..i]:setVisibility(View.GONE)
+	end
+	_ENV["layout"..当前ui]:setVisibility(View.VISIBLE)
+	
+	YoYoImpl:with("FadeInLeft"):duration(500):playOn(_ENV["layout"..当前ui])
+	end)
+end
+显示 = 0
+显2=false
+function 隐藏2()
+显2=true
+ckou:setVisibility(View.GONE)
+floatWindow:setBackground(beij2)
+xfc:setVisibility(View.GONE)
+smallc:setVisibility(View.VISIBLE)
+end
+function 显示2()
+显2=false
+mainLayoutParams.x=20
+window:updateViewLayout(floatWindow, mainLayoutParams)
+
+if 显示==1 then
+	ckou:setVisibility(View.VISIBLE)
+	floatWindow:setBackground(beij)
+	smallc:setVisibility(View.GONE)
+else
+	xfc:setVisibility(View.VISIBLE)
+	smallc:setVisibility(View.GONE)
+	隐藏()
+	
+end
+end
+beij = getVerticalBG({0xf5191919,0xf5191919},20,3,0xff000000)
+beij2 = luajava.loadlayout({
+	GradientDrawable,
+	color = "#001E1C27",
+	cornerRadius = 10
+})
+function getcolor(cl)
+cl[1] = tonumber(math.ceil(cl[1]*2.6,0,5))
+
+if cl[1] > 255 then cl[1] = "0xff" else
+	cl[1] = "0x"..string.format("%x",cl[1]) end
+for i = 1,3 do
+cl[i+1] = string.format("%x",cl[i+1])
+if string.len(cl[i+1]) == 1 then cl[i+1] = "0"..cl[i+1] end
+end
+cl = cl[1]..cl[2]..cl[3]..cl[4]
+return cl
+end
+function getrgb(cl)
+if string.sub(cl,1,1) == "#" then cl = "0x"..string.sub(cl,2,-1) end
+cl = {
+	tonumber(string.sub(cl,0,4)),tonumber("0x"..string.sub(cl,5,6)),tonumber("0x"..string.sub(cl,7,8))}
+return cl
+end
+function 隐藏()
+if 显2==true then return 0 end 
+luajava.runUiThread(function()
+	if tonumber(tostring(ckou:getVisibility())) == 8.0 then
+--chuangk:setVisibility(View.VISIBLE)
+	ckou:setVisibility(View.VISIBLE)
+	xfc:setVisibility(View.GONE)
+	显示=1
+	mainLayoutParams.flags = LayoutParams.FLAG_NOT_TOUCH_MODAL
+	window:updateViewLayout(floatWindow, mainLayoutParams)
+	_ENV["layout"..当前ui]:setVisibility(View.VISIBLE)
+	changan.controlBig(floatWindow,800)
+	floatWindow:setBackground(beij)
+	else
+		显示=0
+	luajava.startThread(function()
+	luajava.runUiThread(function()
+		changan.controlSmall(floatWindow,500)
+	end)
+	gg.sleep(500)
+	luajava.runUiThread(function()
+	mainLayoutParams.flags = LayoutParams.FLAG_NOT_FOCUSABLE
+	window:updateViewLayout(floatWindow, mainLayoutParams)
+	
+	floatWindow:setBackground(beij2)
+	ckou:setVisibility(View.GONE)
+	xfc:setVisibility(View.VISIBLE)
+	_ENV["layout"..当前ui]:setVisibility(View.GONE)
+	changan.controlBig(floatWindow,500)
+	end)
+	end)
+	end
+	end)
+end
+function guid()
+local seed = {
+	'e','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'
+}
+tb = {}
+for i = 1,32 do
+table.insert(tb,seed[math.random(1,16)])
+end
+sid = table.concat(tb)
+return string.format('%s%s%s%s%s',
+	string.sub(sid,1,8),
+	string.sub(sid,10,12),
+	string.sub(sid,21,22))
+..string.format('%s%s%s%s%s',
+	string.sub(sid,1,6),
+	string.sub(sid,21,25)
+)
+end
+
+chazhi = {} chajv = {}
+function changan.seek(name,bian,smin,smax,nows)
+_ENV[bian] = nows
+local thum= getVerticalBG({0xff04d768,0xff04d768},8,3,0xff7200ff)
+thum:setSize(20, 50)
+smin = tonumber(smin) smax = tonumber(smax)
+chajv[bian] = smax-smin
+chazhi[bian] = 1-smin
+if smin == nil then smin = 1 smax = 10 end 
+truesmin = 1
+truesmax = truesmin+chajv[bian]
+if not nows then nows = smin tnows = (smin-nows)
+else
+	tnows = (nows-smin)+1
+end
+if _ENV[bian] == nil then _ENV[bian] = 1.0 end 
+if not name then name = "未设置" end
+local names = name..guid()
+rest = luajava.loadlayout({
+	LinearLayout, 
+	layout_width = 'match_parent',
+	gravity='center_vertical',
+	{
+		FrameLayout,
+		layout_width = 'match_parent',
+		layout_hight = "fill_parent",
+		layout_weight=1,
+		layout_marginTop = "5dp",
+		layout_marginBottom = "5dp",
+		gravity = "center_vertical",
+		background=getVerticalBG({0xffffffff,0xffffffff},3,3,0xff7200ff),
+		{
+			SeekBar,
+			layout_width = 'match_parent',
+			min = truesmin,
+			max = truesmax,
+			progress = tnows,
+			thumb=thum,
+			progressDrawable={getVerticalBG({0x00ffffff,0x00ffffff},3,3,0x006be0c6)},
+			onSeekBarChange = {
+				onProgressChanged = function(SeekBar, var2, var3)
+				if not var3 then
+				return
+				end
+				local resultvar = tonumber(string.sub(var2,0,-3))-chazhi[bian]
+				luajava.runUiThread(function()
+					luajava.getIdValue(names):setText(tostring(resultvar))
+					end)
+				_ENV[bian] = resultvar
+				end
+			}},{
+			TextView,
+			layout_gravity = "center",
+			text = tostring(nows),
+			id = luajava.newId(names),
+			gravity='center',
+			textSize='11sp',
+			textColor='#ffffff',
+		}
+	},
+	{TextView,
+		layout_width='60dp',
+		layout_marginLeft='8dp',
+		text=name,
+		textSize='11sp',
+		textColor='#ffffff',
+	}
+})
+
+return rest
+end
+radon=getRes("heiraon")
+radoff=getRes("heiraoff")
+radiog={}
+function changan.radio (cklist)
+local rid=guid()
+radiog[rid]={}
+rest = {
+	LinearLayout ,
+	layout_width = 'match_parent' ,
+	layout_height = "wrap_content" ,
+	layout_marginTop = "10dp" ,
+	gravity = "top" ,
+	orientation = "vertical" ,
+
+}
+if type (cklist [1]) == "string" then
+	rds=2
+rest [# rest + 1] = {
+	TextView ,
+	gravity = "left" ,
+	padding="5dp",
+	text = cklist [1] ,
+	textSize = "13sp" ,
+	textColor = '#ffffff' ,
+	layout_width = 'fill_parent' ,
+	layout_height = 'wrap_content' ,
+	layout_marginLeft = "10dp" ,
+	layout_marginRight = "5dp" ,
+	layout_marginTop = "0dp" ,
+	layout_marginBottom = "0dp" ,
+}
+else
+	rds=1
+end
+local restt={
+	LinearLayout ,
+	layout_width = 'match_parent' ,
+	layout_height = "wrap_content" ,
+	layout_marginTop = "10dp" ,
+	gravity = "top" ,
+	
+}
+for i = rds , # cklist do
+local name = cklist [i] [1]
+local func = cklist [i] [2]
+if not name then
+name = "未设置"
+end
+nid = name..guid ()
+radiog[rid][nid]=false
+local func = radin(rid,nid,func)
+local tid = nid..guid ()
+_ENV [tid] = luajava.loadlayout ( {
+	LinearLayout ,
+	layout_height = "30dp" ,
+	layout_marginTop = "5dp" ,
+	layout_marginBottom = "15dp" ,
+	layout_marginLeft = "4dp" ,
+	layout_marginRight = "10dp" ,
+	gravity = "center_vertical" ,
+	onClick = function ()
+	changan.controlWater (_ENV [tid] , 200)
+	func()
+	end
+
+	,
+	{
+		ImageView ,
+		id = luajava.newId (nid) ,
+		layout_width = '20dp' ,
+		layout_height = "20dp" ,
+		layout_marginLeft = "2dp" ,
+		layout_marginRight = "0dp" ,
+		src =radoff ,
+		colorFilter=0xff7200ff,
+	} , {
+		TextView ,
+		gravity = "top" ,
+		text = name ,
+		textSize="11sp",
+		textColor = '#ffffff' ,
+		layout_width = 'wrap_content' ,
+		layout_height = 'wrap_content' ,
+		layout_marginLeft = "1dp" ,
+		layout_marginRight = "3dp" ,
+	}
+})
+restt [# restt + 1] = _ENV [tid]
+end
+rest [# rest + 1] = restt
+return luajava.loadlayout (rest)
+end
+function radin(rid,nid,func)
+return function()
+for k,v in pairs(radiog[rid]) do
+	luajava.getIdValue(k):setImageDrawable(radoff)
+	if k==nid and v~=true then
+		luajava.getIdValue(k):setImageDrawable(radon)
+		v=true
+		luajava.newThread(func):start()
+	end
+end
+end
+end
+
+
+function 开关3(name,func1,func2,nid)
+name = name..guid()
+_ENV[name] = "关"
+if func1 == nil then func1 = "" end
+if func2 == nil then func2 = "" end
+if type(func1) == "function" then
+return function()
+namers = _ENV[name]
+if namers ~= "开" then
+luajava.runUiThread(function()
+	luajava.getIdValue(nid.."k"):setVisibility(View.GONE)
+	luajava.getIdValue(nid.."g"):setVisibility(View.VISIBLE)
+	end)
+_ENV[name] = "开"
+vibra:vibrate(10)
+pcall(func1)
+else
+	luajava.runUiThread(function()
+	luajava.getIdValue(nid.."g"):setVisibility(View.GONE)
+	luajava.getIdValue(nid.."k"):setVisibility(View.VISIBLE)
+	end)
+_ENV[name] = "关"
+vibra:vibrate(10)
+
+pcall(func2)
+end
+end
+end
+end
+function getShape3()
+jianbians = luajava.new(GradientDrawable)
+jianbians:setCornerRadius(12)
+jianbians:setGradientType(GradientDrawable.LINEAR_GRADIENT)
+jianbians:setColors({0x00000000,0x00000000})
+jianbians:setOrientation(GradientDrawable.Orientation.LEFT_RIGHT)
+jianbians:setStroke(2,0xaaffffff)--边框宽度和颜色
+return jianbians
+end
+function getShape(tmp0,tmp1,tmp2,tmp3)
+jianbians = luajava.new(GradientDrawable)
+jianbians:setCornerRadius(tmp0)
+jianbians:setGradientType(GradientDrawable.LINEAR_GRADIENT)
+jianbians:setColors(tmp1)
+jianbians:setOrientation(GradientDrawable.Orientation.LEFT_RIGHT)
+jianbians:setStroke(8,tmp3)--边框宽度和颜色
+return jianbians
+end
+function getShape2(tmp0,tmp1,tmp2,tmp3)
+jianbians = luajava.new(GradientDrawable)
+jianbians:setCornerRadius(tmp0)
+jianbians:setGradientType(GradientDrawable.LINEAR_GRADIENT)
+jianbians:setColors(tmp1)
+jianbians:setOrientation(GradientDrawable.Orientation.LEFT_RIGHT)
+jianbians:setStroke(8,tmp3)--边框宽度和颜色
+return jianbians
+end
+
+
+
+checkbg1 = getRes("quarkcheckoff")
+checkbg2 = getRes("quarkcheckon")
+switchs={}
+function changan.intcheck(name,func1,func2)
+nid = name..guid()
+local func = 开关5(name,func1,func2,nid)
+if not name then name = "未设置" end
+switchs[nid] = {
+	LinearLayout, 
+	layout_width = 'match_parent',
+	layout_weight=1,
+	layout_height = "28dp",
+	layout_marginTop = "1dp",
+	layout_marginBottom = "1dp",
+	padding = "1dp",
+	{
+		LinearLayout, 
+		padding="3dp",
+		onClick = function() luajava.newThread(function() func() end):start() end,
+		layout_width = 'fill_parent',
+		layout_height = "wrap_content",
+		gravity = "center_vertical",
+		--background=getVerticalBG({0xffFFFDF2,0xddffffff,0xffFFFDF2},15,8,0xffFFDA71),
+		{
+			ImageView,
+			id = luajava.newId(nid),
+			src = checkbg1,
+			layout_width = '20dp',
+			layout_height = '20dp',
+			padding = "0dp",
+			colorFilter=0xff04d768,
+		},{
+			TextView,
+			id=luajava.newId(nid.."t"),
+			gravity = "left",
+			text = name,
+			textColor='#ffffff',
+			textSize = "11sp",
+--layout_marginLeft="8dp",
+			layout_width = 'match_parent',
+	layout_weight=1,
+		},
+		}
+}
+return switchs[nid]
+end
+function 开关5(name,func1,func2,nid)
+local sname = nid
+local localname=name
+name = name..guid()
+_ENV[name] = "关"
+if func1 == nil then func1 = "" end
+if func2 == nil then func2 = "" end
+if type(func1) == "function" then
+return function()
+namers = _ENV[name]
+if namers ~= "开" then
+vibra:vibrate(9)
+luajava.runUiThread(function()
+	luajava.getIdValue(nid):setImageDrawable(checkbg2)
+	--luajava.getIdValue(nid.."t"):setTextColor(switch颜色)
+	--changan.controlWater(switchs[nid],300)
+	end)
+_ENV[name] = "开"
+pcall(func1)
+else
+	vibra:vibrate(9)
+luajava.runUiThread(function()
+	luajava.getIdValue(nid):setImageDrawable(checkbg1)
+	--luajava.getIdValue(nid.."t"):setTextColor(0xff232323)
+	--changan.controlWater(switchs[nid],300)
+	end)
+_ENV[name] = "关"
+pcall(func2)
+end
+end
+end
+end
+function changan.check2(cklist)
+	if #cklist==0 then return nil end
+	local rest = {
+		LinearLayout, 
+		layout_width = 'fill_parent',
+		layout_height = "wrap_content",
+		gravity = "center",
+		orientation="vertical",
+		
+	}
+
+	for i = 1, #cklist,2 do
+	local tempTable = {LinearLayout, 
+		layout_width = 'fill_parent',
+		layout_height = "wrap_content",
+		gravity = "left",
+		orientation="horizontal"
+	}
+	for j = 0, 1 do
+		if cklist[i + j] ~= nil then
+		local name = cklist[i + j][1]
+		local func1 = cklist[i + j][2]
+		local func2 = cklist[i + j][3]
+		if not name then name = "未设置" end
+			rstt = changan.intcheck(name,func1,func2)
+			table.insert(tempTable, rstt)
+		else
+			table.insert(tempTable, {LinearLayout, 
+			layout_width = 'match_parent',
+			layout_weight=1,})
+		end
+	end
+	table.insert(rest, tempTable)
+	end
+	return luajava.loadlayout(rest)
+end
+function changan.check3(cklist)
+	if #cklist==0 then return nil end
+	local rest = {
+		LinearLayout, 
+		layout_width = 'fill_parent',
+		layout_height = "wrap_content",
+		gravity = "center",
+		orientation="vertical",
+		
+	}
+
+	for i = 1, #cklist,3 do
+	local tempTable = {LinearLayout, 
+		layout_width = 'fill_parent',
+		layout_height = "wrap_content",
+		gravity = "left",
+		orientation="horizontal"
+	}
+	for j = 0, 2 do
+		if cklist[i + j] ~= nil then
+		local name = cklist[i + j][1]
+		local func1 = cklist[i + j][2]
+		local func2 = cklist[i + j][3]
+		if not name then name = "未设置" end
+			rstt = changan.intcheck(name,func1,func2)
+			table.insert(tempTable, rstt)
+		else
+			table.insert(tempTable, {LinearLayout, 
+			layout_width = 'match_parent',
+			layout_weight=1,})
+		end
+	end
+	table.insert(rest, tempTable)
+	end
+	return luajava.loadlayout(rest)
+end
+function changan.check1(cklist)
+	if #cklist==0 then return nil end
+	local rest = {
+		LinearLayout, 
+		layout_width = 'fill_parent',
+		layout_height = "wrap_content",
+		gravity = "center",
+		orientation="vertical",
+		
+	}
+
+	for i = 1, #cklist,1 do
+	local tempTable = {LinearLayout, 
+		layout_width = 'fill_parent',
+		layout_height = "wrap_content",
+		gravity = "left",
+		orientation="vertical"
+	}
+	for j = 0, 0 do
+		if cklist[i + j] ~= nil then
+		local name = cklist[i + j][1]
+		local func1 = cklist[i + j][2]
+		local func2 = cklist[i + j][3]
+		if not name then name = "未设置" end
+			rstt = changan.intcheck(name,func1,func2)
+			table.insert(tempTable, rstt)
+		else
+			table.insert(tempTable, {LinearLayout, 
+			layout_width = 'match_parent',
+			layout_weight=1,})
+		end
+	end
+	table.insert(rest, tempTable)
+	end
+	return luajava.loadlayout(rest)
+end
+switches = {}
+function 开关3(name,func1,func2,nid)
+local sname = nid
+local localname=name
+name = name..guid()
+_ENV[name] = "关"
+if func1 == nil then func1 = "" end
+if func2 == nil then func2 = "" end
+if type(func1) == "function" then
+local outfunc=function()
+namers = _ENV[name]
+if namers ~= "开" then
+vibra:vibrate(9)
+luajava.runUiThread(function()
+	luajava.getIdValue(nid.."k"):setVisibility(View.GONE)
+	YoYoImpl:with("ZoomInLeft"):duration(600):playOn(switches["2s"..sname])
+	luajava.getIdValue(nid.."g"):setVisibility(View.VISIBLE)
+luajava.getIdValue(nid):setBackground(checkbg)
+	end)
+_ENV[name] = "开"
+
+pcall(func1)
+else
+	vibra:vibrate(9)
+luajava.runUiThread(function()
+	luajava.getIdValue(nid.."g"):setVisibility(View.GONE)
+	YoYoImpl:with("ZoomInRight"):duration(600):playOn(switches["1s"..sname])
+	luajava.getIdValue(nid.."k"):setVisibility(View.VISIBLE)
+luajava.getIdValue(nid):setBackground(checkbga)
+	end)
+_ENV[name] = "关"
+pcall(func2)
+end
+end
+if localname=="摇一摇隐藏UI" then yyfunc=outfunc end
+if localname=="音量键隐藏UI" then ylfunc=outfunc end
+return outfunc
+end
+end
+
+function changan.switch(name, func1, func2, miaoshu)
+    if type(func1) ~= 'function' then func1 = function() end end
+    if type(func2) ~= 'function' then func2 = function() end end
+
+    if not checkbg then
+        checkbg = getVerticalBG({0xff7200ff, 0xff7200ff}, 90)
+        checkbga = getVerticalBG({0xff7200ff, 0xff7200ff}, 90)
+        switchbg1 = getVerticalBG({0xffffffff, 0xffffffff}, 90)
+        switchbg2 = luajava.loadlayout {
+            GradientDrawable,
+            color = "#ffffff",
+            cornerRadius = 360
+        }
+    end
+
+    nid = name .. guid()
+    local func = 开关3(name, func1, func2, nid)
+    if not name then name = "未设置" end
+
+    switches["1s" .. nid] = luajava.loadlayout {
+        FrameLayout,
+        layout_width = '40dp',
+        layout_height = '20dp',
+        gravity = "center_vertical",
+        padding = {
+            "1dp", "0dp", "1dp", "0dp"
+        },
+        {
+            LinearLayout, 
+            layout_gravity = "left|center_vertical", -- Komponen dipindah ke kanan
+            id = luajava.newId(nid .. "k"),
+            background = switchbg1,
+            onClick = function() luajava.newThread(function() func() end):start() end,
+            layout_width = '17dp',
+            layout_height = '17dp',
+        },
+    }
+
+    switches["2s" .. nid] = luajava.loadlayout {
+        FrameLayout,
+        onClick = function() luajava.newThread(function() func() end):start() end,
+        layout_width = '40dp',
+        layout_height = '20dp',
+        gravity = "center_vertical",
+        padding = {
+            "1dp", "0dp", "1dp", "0dp"
+        },
+        {
+            LinearLayout, 
+            visibility = "gone",
+            layout_gravity = "right|center_vertical", -- Komponen dipindah ke kanan
+            id = luajava.newId(nid .. "g"),
+            background = switchbg2,
+            onClick = function() luajava.newThread(function() func() end):start() end,
+            layout_width = '17dp',
+            layout_height = '17dp',
+        }
+    }
+
+rest = luajava.loadlayout({
+	LinearLayout, 
+	elevation = "5dp",
+	layout_width = '280dp',
+	layout_height = "48dp",
+	gravity = "center_vertical",
+	padding={'20dp','0dp','20dp','0dp'},
+	{
+		LinearLayout, 
+    layout_width = 'fill_parent',
+    layout_height = "40dp",
+    gravity = "center_vertical",
+    background = {
+        GradientDrawable,
+        color = "#ff272727", -- Warna latar belakang
+        cornerRadius = 12,   -- Sudut melengkung (atur sesuai kebutuhan)
+    },
+    padding = {
+        "0dp", "0dp", "6dp", "0dp"
+    },
+
+		{
+			TextView,
+			gravity = "top",
+			text = name,
+			textColor = "#ffffff",
+			textSize = "13sp",
+			layout_weight = 1,
+			layout_width = '80dp',
+			layout_marginLeft = "10dp",
+			layout_marginRight = "20dp",
+		},
+		{
+			TextView,
+			gravity = "center",
+			layout_height = "match_parent",
+			text = miaoshu,
+			textSize = "11sp",
+			layout_width = "wrap_content",
+			layout_marginLeft = "-50dp",
+			layout_weight = 1,
+			textColor = "#A5A5A5",
+		},
+		{
+			FrameLayout,
+			id=luajava.newId(nid),
+			background = checkbga,
+			elevation = "1dp",
+			onClick = function() luajava.newThread(function() func() end):start() end,
+			layout_width = 'wrap_content',
+			layout_height = 'wrap_content',
+			gravity = "left",
+			padding="1dp",
+			switches["1s"..nid],switches["2s"..nid]
+		}}
+})
+return rest
+end
+
+
+function getButtonBG()
+local selector = luajava.getStateListDrawable()
+selector:addState({
+	android.R.attr.state_pressed
+}, getVerticalBG({0xff933cff,0xff933cff},10,2,0xff232323))
+selector:addState({
+	-android.R.attr.state_pressed
+}, getVerticalBG({0xff272727,0xff272727},10,2,0xffffffff))
+return selector
+end
+
+function changan.button(txt, func, imgPath)
+    if not txt then txt = "Tidak Ditetapkan" end
+    return luajava.loadlayout(
+        {
+            LinearLayout, 
+            layout_width = 'match_parent',
+            layout_height = "wrap_content", -- Atur fleksibel
+            orientation = "vertical", -- Membungkus tombol dan jarak
+            {
+                Space, -- Menambahkan elemen kosong untuk jarak
+                layout_width = "match_parent",
+                layout_height = "9dp", -- Jarak antar tombol
+            },
+            {
+                LinearLayout, 
+                layout_width = "match_parent",
+                layout_height = "39dp",
+                gravity = "center_vertical",
+                background = getButtonBG(),
+                onClick = function() luajava.newThread(function() pcall(func) end):start() end,
+                {
+                    TextView,
+                    layout_marginLeft = "10dp",
+                    text = txt,
+                    textColor = '#ffffff',
+                    textSize = "14sp",
+                    layout_width = "wrap_content",
+                    layout_weight = 1, -- Membuat teks fleksibel agar tidak menghalangi gambar
+                },
+                {
+                    ImageView,
+                    layout_width = "18dp",
+                    layout_height = "18dp",
+                    layout_marginRight = "10dp",
+                    src = imgPath, -- Jalur gambar yang ingin ditampilkan
+                }
+            }
+        }
+    )
+end
+
+function launch(pkg)
+loadingBox = getLoadingBox(pkg..'\n正在启动...')
+loadingBox['显示']()
+隐藏()
+gg.setProcess(pkg)
+gg.sleep(500)
+if tostring(gg.getTargetPackage()) == pkg then
+	loadingBox['关闭']()
+gg.toast("Process Selected:"..pkg)
+return 0
+end
+gg.toast("Starting Game...")
+
+print(gg.isPackageInstalled(pkg))
+app.start(pkg)
+jci=0
+--gg.sleep(5000)
+while true do
+	gg.setProcess(pkg)
+	gg.sleep(400)
+	if tostring(gg.getTargetPackage()) == pkg then
+		loadingBox['关闭']()
+		gg.toast("Login Successful ")
+		break
+	else
+		jci=jci+1
+		if jci==14 then
+			loadingBox['关闭']()
+			gg.alert("Failed to Get Process")
+			gg.setProcessX()
+			break
+		end
+	end
+	gg.sleep(100)
+end
+end
+
+import("android.media.AudioManager")
+audi = context:getSystemService("audio")
+audiotype = {
+	AudioManager.STREAM_ALARM, --手机闹铃的声音
+	AudioManager.STREAM_MUSIC, --手机音乐的声音
+	AudioManager.STREAM_NOTIFICATION, --系统提示的通知
+	AudioManager.STREAM_RING, --电话铃声的声音
+	AudioManager.STREAM_SYSTEM, --手机系统的声音
+	AudioManager.STREAM_VOICE_CALL, --语音电话的声音
+	AudioManager.STREAM_DTMF, --DTMF音调的声音
+--AudioManager.STREAM_BLUETOOTH_SCO,
+}
+yinl = {}
+for i = 1,#audiotype do
+yinl[i] = {}
+yinl[i].type = audiotype[i]
+yinl[i].min = audi:getStreamMinVolume(audiotype[i])
+yinl[i].max = audi:getStreamMaxVolume(audiotype[i])
+yinl[i].now = audi:getStreamVolume(audiotype[i])
+end
+yltype = 0
+function jianting3(func)
+yinln = {}
+for i = 1,#audiotype do
+yinln[i] = {}
+yinln[i].type = audiotype[i]
+yinln[i].now = audi:getStreamVolume(audiotype[i])
+if yinln[i].now > yinl[i].now then
+yinl[i].now = yinln[i].now
+if yltype == 1 then
+yltype = 0
+func()
+end
+elseif yinln[i].now < yinl[i].now then
+yinl[i].now = yinln[i].now
+if yltype == 0 then
+yltype = 1
+func()
+end
+end
+end
+end
+qhkai = 0
+qiehuan = function()
+if qhkai == 0 then
+qhkai = 1
+draw.remove()
+luajava.runUiThread(function()
+	changan.controlSmall(floatWindow,400)
+	end)
+gg.sleep(400)
+luajava.runUiThread(function()
+	floatWindow:setVisibility(View.GONE)
+	end)
+else
+	qhkai = 0
+huiz()
+luajava.runUiThread(function() floatWindow:setVisibility(View.VISIBLE) end)
+luajava.runUiThread(function()
+	changan.controlBig(floatWindow,400)
+	end)
+
+end
+end
+function changan.text(txt,color,size)
+if not txt then txt = "未设置文字" end
+if not color then color = "#ffffff" end
+if not size then size = "18sp" end
+return luajava.loadlayout(
+	{
+		TextView,
+		text = txt,
+		textSize = size,
+		textColor = color,
+		layout_width = "wrap_content",
+	})
+end
+corb = true
+function changan.setedit(name,txt)
+txt = tostring(txt)
+luajava.runUiThread(function()
+	luajava.getIdValue(_ENV[name]):setText(txt)
+	end)
+end
+
+function changan.getedit(name)
+--gg.alert(edit)
+edit = tostring(luajava.getIdValue(_ENV[name]):getText())
+return edit
+end
+function 开关(name,func1,func2)
+if func1 == nil then func1 = "" end
+if func2 == nil then func2 = "" end
+if type(func1) == "function" then
+return function()
+namers = _ENV[name]
+if namers ~= "开" then
+_ENV[name] = "开"
+pcall(func1)
+else
+	_ENV[name] = "关"
+pcall(func2)
+end
+
+end
+end
+end
+paramt = {}
+titletable = {}
+corb = true
+function getLayoutParams2()
+local prm = luajava.new(WindowManager.LayoutParams)
+
+layoutParams1 = prm
+if (Build.VERSION.SDK_INT >= 26) then -- 设置悬浮窗方式
+layoutParams1.type = prm.TYPE_APPLICATION_OVERLAY
+else
+	layoutParams1.type = prm.TYPE_PHONE
+end
+layoutParams1.format = PixelFormat.RGBA_8888 -- 设置背景
+layoutParams1.flags = prm.FLAG_NOT_FOCUSABLE -- 焦点设置Finish
+layoutParams1.gravity = Gravity.CENTER -- 重力设置
+layoutParams1.width = prm.WRAP_CONTENT -- 布局宽度
+layoutParams1.height = prm.WRAP_CONTENT -- 布局高度
+return layoutParams1
+end
+
+namelist = {}
+param1 = {}
+floattable = {}
+function changan.newfloat(name,func1,func2)
+floattable[name] = 1
+local func = 开关(name.."k",func1,func2)
+window = context:getSystemService("window") -- 获取窗口管理器
+local function invoke(name,func1,func2)
+if not name then name = "未设置" end
+nameid = name..guid()
+local ok
+local RawX, RawY, x, y
+nameid1 = name..guid()
+if not namelist[name] then namelist[name] = false end
+if namelist[name] ~= false then clclcl = "#75ff0000" else clclcl = "#f2000000" end
+param1[name] = getLayoutParams2()
+_ENV[name] = luajava.loadlayout(
+	{
+		LinearLayout, 
+		layout_width = "40dp",
+		id = luajava.newId(nameid1),
+		layout_height = "40dp",
+		background = luajava.loadlayout {
+			GradientDrawable,
+			color = clclcl,
+			cornerRadius = 30
+		},
+		onClick = function()
+
+		if namelist[name] == false then
+		_ENV[name]:setBackground(luajava.loadlayout {
+			GradientDrawable,
+			color = "#75ff0000",
+			cornerRadius = 30
+		})
+		namelist[name] = true
+		elseif namelist[name] == true then
+		_ENV[name]:setBackground(luajava.loadlayout {
+			GradientDrawable,
+			color = "#f2000000",
+			cornerRadius = 30
+		})
+		namelist[name] = false
+		end
+		luajava.newThread(function() pcall(func) end):start()
+		end,
+
+		onTouch = function(v, event)
+		local Action = event:getAction()
+		if Action == MotionEvent.ACTION_DOWN then
+		isMove = false
+		RawX = event:getRawX()
+		RawY = event:getRawY()
+		x = param1[name].x
+		y = param1[name].y
+		elseif Action == MotionEvent.ACTION_MOVE then
+		isMove = true
+		param1[name].x = tonumber(x) + (event:getRawX() - RawX)
+		param1[name].y = tonumber(y) + (event:getRawY() - RawY)
+		window:updateViewLayout(_ENV[name], param1[name])
+		end
+		end,
+		{
+			TextView,
+			text = name,
+			gravity = "center",
+			layout_width = "50dp",
+			layout_height = "50dp",
+		}
+	})
+
+local function invoke2()
+window:addView(_ENV[name], param1[name])
+end
+
+local runnable = luajava.getRunnable(invoke2)
+local handler = luajava.getHandler()
+handler:post(runnable)
+
+end
+
+invoke(name,func1,func2)
+end
+
+function changan.rmvfloat(name)
+floattable[name] = 0
+local function invoke2()
+window:removeView(_ENV[name], param1[name])
+end
+local runnable = luajava.getRunnable(invoke2)
+local handler = luajava.getHandler()
+handler:post(runnable)
+
+end
+
+function 开关2(name,func1,func2,nid)
+if func1 == nil then func1 = "" end
+if func2 == nil then func2 = "" end
+if type(func1) == "function" then
+return function()
+namers = _ENV[name]
+if namers ~= "开" then
+luajava.runUiThread(function()
+	luajava.getIdValue(nid):setBackground(luajava.getBitmapDrawable("/sdcard/Starcool/check2"))
+	end)
+_ENV[name] = "开"
+func1()
+else
+	luajava.runUiThread(function()
+	luajava.getIdValue(nid):setBackground(luajava.getBitmapDrawable("/sdcard/Starcool/check1"))
+	end)
+_ENV[name] = "关"
+func2()
+end
+
+end
+end
+end
+function visi(tid,ttid)
+local tview = luajava.getIdValue(tid)
+local ttview = luajava.getIdValue(ttid)
+if not tview then return 0 end 
+if tonumber(tostring(tview:getVisibility())) == 8.0 then
+tview:setVisibility(View.VISIBLE)
+ttview:setBackground(luajava.getBitmapDrawable("/sdcard/Starcool/sanjiao"))
+else
+	tview:setVisibility(View.GONE)
+ttview:setBackground(luajava.getBitmapDrawable("/sdcard/Starcool/hsanjiao"))
+end
+end
+changan.controlBig = function(control,time)
+luajava.runUiThread(function()
+	import "android.animation.ObjectAnimator"
+	ObjectAnimator():ofFloat(control,"scaleX", {
+		0, 0.4, 0.7, 1
+	}):setDuration(time):start()
+	ObjectAnimator():ofFloat(control,"scaleY", {
+		0, 0.4, 0.7, 1
+	}):setDuration(time):start()
+	end) end
+changan.controlFlip = function(control,time)
+luajava.runUiThread(function()
+	import "android.view.animation.Animation"
+	import "android.animation.ObjectAnimator"
+	xuanzhuandonghua = ObjectAnimator:ofFloat(control, "rotationY", {
+		0, 360
+	})
+	xuanzhuandonghua:setRepeatCount(0)
+	xuanzhuandonghua:setRepeatMode(Animation.REVERSE)
+	xuanzhuandonghua:setDuration(time)
+	xuanzhuandonghua:start()
+	end) end
+changan.controlWater = function(control,time)
+luajava.runUiThread(function()
+	import "android.animation.ObjectAnimator"
+	ObjectAnimator():ofFloat(control,"scaleX", {
+		1, 0.8, 0.9, 1
+	}):setDuration(time):start()
+	ObjectAnimator():ofFloat(control,"scaleY", {
+		1,0.8,0.9,1
+	}):setDuration(time):start()
+	end) end
+changan.controlSmall = function(control,time)
+luajava.runUiThread(function()
+	import "android.animation.ObjectAnimator"
+	ObjectAnimator():ofFloat(control,"scaleX", {
+		1, 0.7, 0.4, 0
+	}):setDuration(time):start()
+	ObjectAnimator():ofFloat(control,"scaleY", {
+		1, 0.7, 0.4, 0
+	}):setDuration(time):start()
+end) end
+
+function changan.box(views)
+local tid = "box"..guid()
+local ttid = tid.."6"
+local firadio = {
+	LinearLayout, 
+	layout_width = 'fill_parent',
+	layout_height = "wrap_content",
+	layout_marginTop = "2dp",
+	gravity="center",
+	layout_marginBottom = "2dp",
+	orientation = "vertical",
+}
+if type(views[1]) == "string" or type(views[1]) == "number" then
+firadio[#firadio+1] = {
+	FrameLayout,
+	layout_width = 'match_parent',
+	layout_height = "30dp",
+	gravity = "center_vertical",
+	layout_marginTop = "2dp",
+	layout_marginBottom = "4dp",
+	onClick = function() visi(tid,ttid) end,
+	background = getButtonBG(),
+	{
+		ImageView,
+		layout_gravity="left|center",
+		layout_marginLeft = "10dp",
+		id = luajava.newId(ttid),
+		background = "/sdcard/Starcool/hsanjiao",
+		layout_width = "12dp",
+		layout_height = "12dp",
+		layout_marginTop = "0dp",
+	},
+	{
+		TextView,text = views[1],
+		textSize = "11sp",
+		layout_width = "220dp",
+		textColor = "#ffffff",
+		layout_gravity = "center",
+		layout_marginLeft='34dp',
+		
+	}} else
+	gg.alert("changan.box第一个参数必须是string") os.exit()
+end
+radios = {
+	LinearLayout, 
+	layout_marginLeft = "0dp",
+	layout_marginRight = "0dp",
+	orientation = "vertical",
+	visibility = "gone",
+	id = luajava.newId(tid),
+	padding = "0dp",
+	gravity="center_horizontal",
+	layout_width = 'fill_parent',
+}
+for i = 2,#views do
+radios[#radios+1] = views[i]
+end
+firadio[#firadio+1] = radios
+return luajava.loadlayout(firadio)
+end
+fenye={}
+fenyed={}
+function 二级分页(tab)
+	if tab['第3页']~=nil then
+	local tid=guid()
+	fenye[tid]={}
+	fenyed[tid]=getVerticalBG({0xffffffff,0xffffffff},15)
+	for i=1,3 do
+		fenye[tid][i]={
+		LinearLayout, 
+		visibility='gone',
+		layout_width='match_parent',
+		orientation='vertical',
+		
+		}
+		for j=1,#tab['第'..i..'页'] do
+			table.insert(fenye[tid][i],tab['第'..i..'页'][j])
+		end
+		fenye[tid][i]=luajava.loadlayout(fenye[tid][i])
+	end
+	local tmp={
+		LinearLayout, 
+		layout_width='match_parent',
+		gravity='center_horizontal',
+		orientation='vertical',
+		{LinearLayout, 
+			padding='2dp',
+			background=getVerticalBG({0xff252525,0xff252525},15),
+			{TextView,
+				text=tab['第1页名字'],
+				textSize='11sp',
+				textColor='#ffffff',
+				onClick=function()
+					luajava.getIdValue(tid..'1'):setBackground(fenyed[tid])
+					fenye[tid][1]:setVisibility(View.VISIBLE)
+					YoYoImpl:with("SlideInUp"):duration(500):playOn(fenye[tid][1])
+					luajava.getIdValue(tid..'2'):setBackground(empty)
+					fenye[tid][2]:setVisibility(View.GONE)
+					luajava.getIdValue(tid..'3'):setBackground(empty)
+					fenye[tid][3]:setVisibility(View.GONE)
+				end,
+				id=luajava.newId(tid..'1'),
+				padding={'10dp','5dp','10dp','5dp'},
+			},
+			{TextView,
+				text=tab['第2页名字'],
+				textSize='11sp',
+				textColor='#ffffff',
+				onClick=function()
+					luajava.getIdValue(tid..'1'):setBackground(empty)
+					fenye[tid][1]:setVisibility(View.GONE)
+					luajava.getIdValue(tid..'2'):setBackground(fenyed[tid])
+					YoYoImpl:with("SlideInUp"):duration(500):playOn(fenye[tid][2])
+					fenye[tid][2]:setVisibility(View.VISIBLE)
+					luajava.getIdValue(tid..'3'):setBackground(empty)
+					fenye[tid][3]:setVisibility(View.GONE)
+					
+				end,
+				id=luajava.newId(tid..'2'),
+				padding={'10dp','5dp','10dp','5dp'},
+			},{TextView,
+				text=tab['第3页名字'],
+				textSize='11sp',
+				textColor='#ffffff',
+				onClick=function()
+					luajava.getIdValue(tid..'1'):setBackground(empty)
+					fenye[tid][1]:setVisibility(View.GONE)
+					luajava.getIdValue(tid..'2'):setBackground(empty)
+					YoYoImpl:with("SlideInUp"):duration(500):playOn(fenye[tid][3])
+					fenye[tid][2]:setVisibility(View.GONE)
+					luajava.getIdValue(tid..'3'):setBackground(fenyed[tid])
+					fenye[tid][3]:setVisibility(View.VISIBLE)
+					
+				end,
+				id=luajava.newId(tid..'3'),
+				padding={'10dp','5dp','10dp','5dp'},
+			}
+		},fenye[tid][1],fenye[tid][2],fenye[tid][3]
+	}
+	local tmp= luajava.loadlayout(tmp)
+	luajava.getIdValue(tid..'1'):setBackground(fenyed[tid])
+	fenye[tid][1]:setVisibility(View.VISIBLE)
+	return tmp
+	else
+	local tid=guid()
+	fenye[tid]={}
+	fenyed[tid]=getVerticalBG({0xffffffff,0xffffffff},15)
+	for i=1,2 do
+		fenye[tid][i]={
+		LinearLayout, 
+		visibility='gone',
+		layout_width='match_parent',
+		orientation='vertical',
+		
+		}
+		for j=1,#tab['第'..i..'页'] do
+			table.insert(fenye[tid][i],tab['第'..i..'页'][j])
+		end
+		fenye[tid][i]=luajava.loadlayout(fenye[tid][i])
+	end
+	local tmp={
+		LinearLayout, 
+		layout_width='match_parent',
+		gravity='center_horizontal',
+		orientation='vertical',
+		{LinearLayout, 
+			padding='2dp',
+			background=getVerticalBG({0xff04d768,0xff04d768},15),
+			{TextView,
+				text=tab['第1页名字'],
+				textSize='11sp',
+				textColor='#ffffff',
+				onClick=function()
+					luajava.getIdValue(tid..'1'):setBackground(fenyed[tid])
+					fenye[tid][1]:setVisibility(View.VISIBLE)
+					YoYoImpl:with("SlideInUp"):duration(500):playOn(fenye[tid][1])
+					luajava.getIdValue(tid..'2'):setBackground(empty)
+					fenye[tid][2]:setVisibility(View.GONE)
+				end,
+				id=luajava.newId(tid..'1'),
+				padding={'10dp','5dp','10dp','5dp'},
+			},
+			{TextView,
+				text=tab['第2页名字'],
+				textSize='11sp',
+				textColor='#ffffff',
+				onClick=function()
+					luajava.getIdValue(tid..'1'):setBackground(empty)
+					fenye[tid][1]:setVisibility(View.GONE)
+					luajava.getIdValue(tid..'2'):setBackground(fenyed[tid])
+					YoYoImpl:with("SlideInUp"):duration(500):playOn(fenye[tid][2])
+					fenye[tid][2]:setVisibility(View.VISIBLE)
+					
+				end,
+				id=luajava.newId(tid..'2'),
+				padding={'10dp','5dp','10dp','5dp'},
+			}
+		},fenye[tid][1],fenye[tid][2]
+	}
+	local tmp= luajava.loadlayout(tmp)
+	luajava.getIdValue(tid..'1'):setBackground(fenyed[tid])
+	fenye[tid][1]:setVisibility(View.VISIBLE)
+	return tmp
+end
+end
+
+
+
+
+
+
+
 
 
 
@@ -239,180 +1751,49 @@ v[1].value = Edit.."r"
 v[1].freeze = true
 gg.setValues(v)
 end
-ShadowMODZ = 1
 
-function home()
-q = gg.choice({
-"BYPASS PROTECTION",
-"MEMORY FEATURES",
-"IN-GAME FEATURES",
-"EXIT",
-},nil," SHADOW PREMIUM CHEAT SCRIPT  \nBY:@SHADOWH4XX ")
-if q == nil then else
-if q == 1 then A1() end
-if q == 2 then A2() end
-if q == 3 then A3() end
-if q == 4 then EXIT() end
-end
-ShadowMODZ = -1
-end
-function A1() 
-w = gg.multiChoice({
-"BYPASS (Loading 99%)",
-"SKIP TUTORIAL",
-},nil," SHADOW PREMIUM CHEAT SCRIPT  \nBY:@SHADOWH4XX ")
-if w == nil then else
-if w[1] == true then lobby() end
-if w[2] == true then skipt() end
-if w[3] == true then home() end
-end
+
+
+
+
+
+
+
+
+
+
+
+huiz=function()
+
+	
+	
+	
 end
 
 
-function lobby()
-                               --FIXCRASH
-HexPatches.PirateMODZ("libanogs.so", 0x174B50, "h 00 00 80 D2 C0 03 5F D6", 32);
-HexPatches.PirateMODZ("libanogs.so", 0x239DEC, "h 00 00 80 D2 C0 03 5F D6", 32);
-HexPatches.PirateMODZ("libanogs.so", 0x23C02C, "h 00 00 80 D2 C0 03 5F D6", 32);
-HexPatches.PirateMODZ("libanogs.so", 0x23C584, "h 00 00 80 D2 C0 03 5F D6", 32);
-HexPatches.PirateMODZ("libanogs.so", 0x23D6C8, "h 00 00 80 D2 C0 03 5F D6", 32);
-HexPatches.PirateMODZ("libanogs.so", 0x23DFCC, "h 00 00 80 D2 C0 03 5F D6", 32);
-HexPatches.PirateMODZ("libanogs.so", 0x23F7EC, "h 00 00 80 D2 C0 03 5F D6", 32);
-HexPatches.PirateMODZ("libanogs.so", 0x23FB08, "h 00 00 80 D2 C0 03 5F D6", 32);
-HexPatches.PirateMODZ("libanogs.so", 0x240DA8, "h 00 00 80 D2 C0 03 5F D6", 32);
-HexPatches.PirateMODZ("libanogs.so", 0x241E10, "h 00 00 80 D2 C0 03 5F D6", 32);
-HexPatches.PirateMODZ("libanogs.so", 0x242F2C, "h 00 00 80 D2 C0 03 5F D6", 32);
-HexPatches.PirateMODZ("libanogs.so", 0x22957C, "h 00 00 80 D2 C0 03 5F D6", 32);
-HexPatches.PirateMODZ("libanogs.so", 0x22B644, "h 00 00 80 D2 C0 03 5F D6", 32);
-HexPatches.PirateMODZ("libanogs.so", 0x2CDCF4, "h 00 00 80 D2 C0 03 5F D6", 32);
-HexPatches.PirateMODZ("libanogs.so", 0x25F9BC, "h 00 00 80 D2 C0 03 5F D6", 32);
-HexPatches.PirateMODZ("libanogs.so", 0x2AFB68, "h 00 00 80 D2 C0 03 5F D6", 32);
-HexPatches.PirateMODZ("libanogs.so", 0x204D48, "h 00 00 80 D2 C0 03 5F D6", 32);
-HexPatches.PirateMODZ("libanogs.so", 0x206D84, "h 00 00 80 D2 C0 03 5F D6", 32);
-HexPatches.PirateMODZ("libanogs.so", 0x209C68, "h 00 00 80 D2 C0 03 5F D6", 32);
-HexPatches.PirateMODZ("libanogs.so", 0x213B78, "h 00 00 80 D2 C0 03 5F D6", 32);
-HexPatches.PirateMODZ("libanogs.so", 0x2145EC, "h 00 00 80 D2 C0 03 5F D6", 32);
-HexPatches.PirateMODZ("libanogs.so", 0x2372B8, "h 00 00 80 D2 C0 03 5F D6", 32);
-HexPatches.PirateMODZ("libanogs.so", 0x24017C, "h 00 00 80 D2 C0 03 5F D6", 32);
-HexPatches.PirateMODZ("libanogs.so", 0x25A994, "h 00 00 80 D2 C0 03 5F D6", 32);
-HexPatches.PirateMODZ("libanogs.so", 0x2988D0, "h 00 00 80 D2 C0 03 5F D6", 32);
-                                  
-gg.toast("Bypass Activated")
-end
+stab = {
+--菜单名字，添加即可加页数，需要与结尾配置表页数对应
 
+	"Bypass",
+	"Memory Features",
+	"Exit And Info",
+}
 
-function skipt()
-local so = gg.getRangesList('libunity.so')[1].start
-local py = 0x857AF98
-gg.setValues({{address = so + py, flags = gg.TYPE_QWORD,32, value = "-2999674700105252832"}})
-gg.toast("ᴀᴄᴛɪᴠᴀᴛᴇ sᴋɪᴘ ᴛᴜᴛᴏʀɪᴀʟ")
-end
+左上角图标="https://i.ibb.co/rfy66G5/e-logo.jpg"
 
-function A2() 
-e = gg.prompt({
-"☠️ AIMBOT ALL GUNS [ADJUSTABLE]",
-"☠️ WALLHACK RED",
-"☠️ NO SPREAD",
-"☠️ NO RELOAD",
-"☠️ EXPANDED HITBOX",
-"☠️ NO RECOIL",
-"☠️ FPS BOOSTER",
-"☠️ FAST SCOPE",
-"☠️ NO PARACHUTE",
-"☠️ LONG SLIDE",
-"☠️ ESP NAME BR",
-"☠️ UNLI AMMO",
-"☠️ SPEEDWALK",
-"☠️ RAPID FIRE",
-"☠️ FAST SWIM",
-"☠️ AIM SMALL CROSSHAIR",
-"☠️ INFINITE SLIDE",
-"☠️ PUMPBOOST",
-"☠️ FAST SWITCH",
-"☠️ BUFF DAMAGE",
-"☠️ NO SHAKE",
-"☠️ LONG EXECUTION",
-"☠️ EXTENDED RANGE",
-"☠️ SNOWBOARD SPEED",
-"☠️ WALK UNDERWATER",
-"◻️ ʙᴀᴄᴋ", 
-}, nil, {
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    })
-if e == nil then else
-if e[1] == true then aimall() end
-if e[2] == true then wall() end
-if e[3] == true then spread() end
-if e[4] == true then box() end
-if e[5] == true then box2() end
-if e[6] == true then box3() end
-if e[7] == true then box4() end
-if e[8] == true then scope() end
-if e[9] == true then nopara() end
-if e[10] == true then slides() end
-if e[11] == true then esp() end
-if e[12] == true then current() end
-if e[13] == true then speed() end
-if e[14] == true then rapid() end
-if e[15] == true then fastswim() end
-if e[16] == true then aimsmall() end
-if e[17] == true then infinite() end
-if e[18] == true then spam() end
-if e[19] == true then sw() end
-if e[20] == true then buff() end
-if e[21] == true then shake() end
-if e[22] == true then execution() end
-if e[23] == true then weaprange() end
-if e[24] == true then snowspeed() end
-if e[25] == true then water() end
-if e[26] == true then home() end
-end
-end
+小悬浮窗图标 = "https://i.ibb.co/rfy66G5/e-logo.jpg"
 
-function aimall()
-aimbot = gg.prompt({"ᴀɪᴍ ʟᴏᴄᴋ ᴀᴅᴊᴜsᴛ sᴇᴛᴛɪɴɢs [1; 1000000]"}, nil, {"number"})
-unity = gg.getRangesList("libunity.so")[1].start 
-setValues(unity + 0x96F957C, 4, "~A8 LDR S0, [PC,#0x8]") --Sniper, Shotgun
-setValues(unity + 0x96F957C + 4, 4, "~A8 RET")
-setValues(unity + 0x96F957C + 8, 16, aimbot[1])
-unity = gg.getRangesList("libunity.so")[1].start 
-setValues(unity + 0x846BD34, 4, "~A8 LDR S0, [PC,#0x8]") --AR, Smg, Lmg, Pistol
-setValues(unity + 0x846BD34 + 4, 4, "~A8 RET")
-setValues(unity + 0x846BD34 + 8, 16, aimbot[1])
-gg.toast("AIMBOT ALL GUNS ACTIVATED")
-end
+--悬浮窗链接或路径
 
-function wall()
-il2cpp=gg.getRangesList("libunity.so")[1].start
+changan.menu(
+	{
+		{--1
+			changan.text("Premium Bypass Menu"),
+changan.button(						
+"Bypass Logo",
+function()
 local HexPatches = {}
-function MODZ(Lib,Offset,Edit,Type)
+function HexPatches.PirateMODZ(Lib,Offset,Edit,Type)
 local Ranges = gg.getRangesList(Lib)
 local v = {}
 v[1] = {}
@@ -422,351 +1803,254 @@ v[1].value = Edit.."r"
 v[1].freeze = true
 gg.setValues(v)
 end
-WH= 0x53F4CBC
-setValues(il2cpp + WH , 32, "h4000001CC0035FD6")
-setValues(il2cpp + WH+ 0x4, 4, "hC0035FD6")
-setValues(il2cpp + WH+ 0x8, 16, 100)
-MODZ("libunity.so", 0x8497D3C, "h200080D2C0035FD6", 32)
-gg.toast("WALLHACK RED/YELLOW/BLUE/OUTLINE ACTIVATED")
+HexPatches.PirateMODZ("libanogs.so", 0x118A28, "h000080D2C0035FD6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x134EF8, "h000080D2C0035FD6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x17E640, "h 00 00 80 D2 C0 03 5F D6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x2E5CCC, "h000080D2C0035FD6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x2E82BC, "h000080D2C0035FD6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x2EBA40, "h000080D2C0035FD6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x2F5930, "h000080D2C0035FD6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x2F1BE0, "h000080D2C0035FD6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x2B5CD4, "h 00 00 80 D2 C0 03 5F D6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x2B7958, "h 00 00 80 D2 C0 03 5F D6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x2BAEF0, "h 00 00 80 D2 C0 03 5F D6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x2A5D04, "h 00 00 80 D2 C0 03 5F D6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x2A7188, "h 00 00 80 D2 C0 03 5F D6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x246F2C, "h000080D2C0035FD6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x2B97B8, "h 00 00 80 D2 C0 03 5F D6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x2B8DC0, "h 00 00 80 D2 C0 03 5F D6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x2B9870, "h 00 00 80 D2 C0 03 5F D6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x2B7958, "h 00 00 80 D2 C0 03 5F D6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x2B9D68, "h 00 00 80 D2 C0 03 5F D6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x2B9E14, "h 00 00 80 D2 C0 03 5F D6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x2F3728, "h 00 00 80 D2 C0 03 5F D6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x2F5930, "h 00 00 80 D2 C0 03 5F D6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x126B78, "h 00 00 80 D2 C0 03 5F D6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x126C38, "h 00 00 80 D2 C0 03 5F D6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x128440, "h 00 00 80 D2 C0 03 5F D6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x13E708, "h 00 00 80 D2 C0 03 5F D6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x13F3DC, "h 00 00 80 D2 C0 03 5F D6", 32);
+gg.toast("Activated")
+end,
+
+function()									
 end
 
-function spread()
+),
+changan.button(
+"Bypass Report",
+function()
+HexPatches.PirateMODZ("libunity.so", 0x720a568, "h000080D2C0035FD6", 32);
+HexPatches.PirateMODZ("libunity.so", 0x720a744, "h000080D2C0035FD6", 32);
+HexPatches.PirateMODZ("libunity.so", 0x74f152c, "h000080D2C0035FD6", 32);
+HexPatches.PirateMODZ("libunity.so", 0x74f1628, "h000080D2C0035FD6", 32);
+HexPatches.PirateMODZ("libunity.so", 0x74f51cc, "h000080D2C0035FD6", 32);
+HexPatches.PirateMODZ("libunity.so", 0x74f52c8, "h000080D2C0035FD6", 32);
+HexPatches.PirateMODZ("libunity.so", 0x755c590, "h000080D2C0035FD6", 32);
+HexPatches.PirateMODZ("libunity.so", 0x755c73c, "h000080D2C0035FD6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x1c4058, "h000080D2C0035FD6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x1c4234, "h000080D2C0035FD6", 32);
+HexPatches.PirateMODZ("libgcloud.so", 0x3c56a4, "h000080D2C0035FD6", 32);
+HexPatches.PirateMODZ("libgcloud.so", 0x3c5834, "h000080D2C0035FD6", 32);
+HexPatches.PirateMODZ("libgcloud.so", 0x3c5a28, "h000080D2C0035FD6", 32);
+HexPatches.PirateMODZ("libgcloud.so", 0x5ec2c4, "h000080D2C0035FD6", 32);
+HexPatches.PirateMODZ("libgcloud.so", 0x5ec374, "h000080D2C0035FD6", 32);
+HexPatches.PirateMODZ("libgcloud.so", 0x2b8e54, "h000080D2C0035FD6", 32);
+HexPatches.PirateMODZ("libgcloud.so", 0x2b8ea4, "h000080D2C0035FD6", 32);
+HexPatches.PirateMODZ("libgcloud.so", 0x2d0914, "h000080D2C0035FD6", 32);
+HexPatches.PirateMODZ("libgcloud.so", 0x2d0a20, "h000080D2C0035FD6", 32);
+HexPatches.PirateMODZ("libgcloud.so", 0x3950d4, "h000080D2C0035FD6", 32);
+HexPatches.PirateMODZ("libanogs.so", 0x247608, "h000080D2C0035FD6", 32);
+HexPatches.PirateMODZ("libRoosterNN.so", 0x3D88C, "h 00 00 80 D2 C0 03 5F D6", 32);
+HexPatches.PirateMODZ("libRoosterNN.so", 0x3E184, "h 00 00 80 D2 C0 03 5F D6", 32);
+HexPatches.PirateMODZ("libRoosterNN.so", 0x3ED20, "h 00 00 80 D2 C0 03 5F D6", 32);
+HexPatches.PirateMODZ("libRoosterNN.so", 0x3F9AC, "h 00 00 80 D2 C0 03 5F D6", 32);
+HexPatches.PirateMODZ("libRoosterNN.so", 0xF61E8, "h 00 00 80 D2 C0 03 5F D6", 32);
+gg.toast("Activated")
+end,
+function()
+end
+),
+
+changan.text("Select Process"),  
+changan.button("Call Of Duty Garena",
+    function()
+        local pkg = "com.garena.game.codm" -- Package name game
+        launch(pkg) -- Panggil fungsi launch
+    end
+-- Jalur gambar tombol
+),
+											
+		},{---MENU 2			
+		changan.text("Premium Memory Features"),
+changan.switch(
+"Wallhack",
+function()
 local so = gg.getRangesList('libunity.so')[1].start
-local py = 0x8655FF8
-gg.setValues({{address = so + py, flags = gg.TYPE_QWORD, value = "h00 00 80 D2 C0 03 5F D6"}})
-gg.toast("NO SPREAD ACTIVATED")
+local py = 0x5B6DAA8
+gg.setValues({{address = so + py, flags = gg.TYPE_QWORD, value = "h 1F 20 03 D5 E0 03 13 AA"}})
+gg.toast("Active")
+end,
+function()
 end
+),
 
-function box()
-local so = gg.getRangesList('libunity.so')[1].start
-local py = 0x96D4868
-gg.setValues({{address = so + py, flags = gg.TYPE_QWORD, value = "h002C40BCC0035FD6"}})
-gg.toast("NO RELOAD ACTIVATED")
+changan.switch(
+"Aimbot",
+function()
+unity = gg.getRangesList("libunity.so")[1].start 
+setValues(unity + 0x96F957C, 4, "~A8 LDR S0, [PC,#0x8]") --Sniper, Shotgun
+setValues(unity + 0x96F957C + 4, 4, "~A8 RET")
+setValues(unity + 0x96F957C + 8, 16, 1000000)
+unity = gg.getRangesList("libunity.so")[1].start 
+setValues(unity + 0x846BD34, 4, "~A8 LDR S0, [PC,#0x8]") --AR, Smg, Lmg, Pistol
+setValues(unity + 0x846BD34 + 4, 4, "~A8 RET")
+setValues(unity + 0x846BD34 + 8, 16, 1000000)
+gg.toast("Active")
+end,
+function()
 end
+),
 
-function box2()
-local so = gg.getRangesList('libunity.so')[1].start
-local py = 0x8650ADC
-gg.setValues({{address = so + py, flags = gg.TYPE_QWORD, value = "h200080D2C0035FD6"}})
-gg.toast("EXPANDED HITBOX ACTIVATED'")
-end
 
-function box3()
+changan.switch(						
+"No Recoil",
+function()			
 local so = gg.getRangesList('libunity.so')[1].start
 local py = 0x86578E4
 gg.setValues({{address = so + py, flags = gg.TYPE_QWORD, value = "h204C40BCC0035FD6"}})
-gg.toast("NO RECOIL ACTIVATED")
+gg.toast("Active")
+end,
+
+function()			
 end
 
-function box4()
-    HexPatches.PirateMODZ("libunity.so", 0x853C594, "h00 24 80 D2 C0 03 5F D6", 32)
-    HexPatches.PirateMODZ("libunity.so", 0x49D9E94, "h 00 00 80 D2 C0 03 5F D6", 32)
-    HexPatches.PirateMODZ("libunity.so", 0x4660290, "h 00 00 80 D2 C0 03 5F D6", 32)
-    HexPatches.PirateMODZ("libunity.so", 0x49D9FB8, "h 00 00 80 D2 C0 03 5F D6", 32)
-    HexPatches.PirateMODZ("libunity.so", 0x42722B4, "h 00 00 80 D2 C0 03 5F D6", 32)
-    HexPatches.PirateMODZ("libunity.so", 0x8552320, "h200080D2C0035FD6", 32)
-    HexPatches.PirateMODZ("libunity.so", 0x8540054, "h200080D2C0035FD6", 32)
-    HexPatches.PirateMODZ("libunity.so", 0x853B6BC, "h200080D2C0035FD6", 32)
-            HexPatches.PirateMODZ("libunity.so" ,0x9F9CA34, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9868888, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x986AB58, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9F9C9DC, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9F9C97C, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x85422D0, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x8544444, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x854489C, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x8541318, "h 20 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x854E7EC, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x854E854, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x854E8BC, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x854E924, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x854E98C, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x854E9F4, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x854EA5C, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x854EBC4, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x854EDDC, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x854EF44, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x854F15C, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x854F2C4, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x854F4DC, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x854F7FC, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x85409B8, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x854FD94, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x8540B84, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x855032C, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x8540EF0, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x85508C8, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x8550B80, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x8550CE8, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x8550EDC, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x8551044, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x8551238, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x8551500, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x8551668, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x85518B4, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x8551A1C, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x8551C68, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x8551F7C, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x855253C, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x85525F0, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x85526A4, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x8552840, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x8552848, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x85528A8, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x85528B0, "h 20 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x85531D0, "h 20 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x8553350, "h 20 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x85534D0, "h 20 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x8553650, "h 20 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x8553944, "h 20 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x8552848, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x8551D70, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x854FE9C, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x854F904, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x8550434, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x8548E84, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x8549138, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x85494C4, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x8549778, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x8549B04, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x8549DB8, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x854A40C, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x854A4E0, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x854A778, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x8549138, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x854AAB8, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x85537D0, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9FB41FC, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9FB4294, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9FB42D0, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9FB430C, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9FB4348, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9FB4384, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9FB43E4, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9FB4448, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9FB41FC, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9FB4294, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9FB42D0, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9FB430C, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9FB4348, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9FB4384, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9FB43E4, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9FB4448, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x8552818, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9F71900, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9F719CC, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9FCC5E8, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9FCC610, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9FCC624, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9FCC638, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9FCC660, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9FCC674, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9FCC688, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9FCC6D8, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9FCC714, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9FCC73C, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9FCC750, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9389BE0, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9389D30, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x50EE668, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x50EE75C, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x50EE850, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x50EF434, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x50EEDA8, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x50EF0F4, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x50EF294, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x5332880, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x543D258, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x421A620, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x421C7FC, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x421CDF4, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x64CF27C, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x50EF0F4, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x51C7998, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x8552964, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x8552EE8, "h 20 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x84EC1DC, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9FBDB70, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9FBDCA0, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9FBDCD8, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9FBDDA4, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9FBDDB8, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9FBDEFC, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9FBDECC, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9FBDE48, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9FBDF24, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9FBDF58, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9FBDFD8, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9FBE08C, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9FBE140, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9FB9778, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9FD4960, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9FD49C0, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9FD4A20, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9FD4A78, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9FA05D0, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9FA0610, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9F83138, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9F83288, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x9F8329C, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x6DCDA3C, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x83F7ED4, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x6DCDA3C, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x83F7ED4, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x85400D4, "h 20 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x8524A64, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x8540188, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x8450ED8, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x85401E8, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x8540248, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x8446FAC, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x53F4CBC, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x4D38C78, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x493059C, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x4930504, "h 20 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x8335568, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x83A604C, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x7019BF0, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x83A604C, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x6DCB9A8, "h 20 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x83A604C, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x6DCC080, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x6DCC364, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x6DCD5AC, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x83EF084, "h 20 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x532051C, "h 20 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x5323BB0, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x8662874, "h 20 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x85279B4, "h 20 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x7E6DA80, "h 20 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x7061D6C, "h 00 00 80 D2 C0 03 5F D6", 32);
-            HexPatches.PirateMODZ("libunity.so" ,0x821D28C, "h 00 00 80 D2 C0 03 5F D6", 32);
-gg.toast("SMOOTH FPS ACTIVATED")
-end
+),
 
-function scope()
+
+changan.switch(
+"No Spread",
+function()
 local so = gg.getRangesList('libunity.so')[1].start
-local py = 0x96D2804
+local py = 0x8655FF8
+gg.setValues({{address = so + py, flags = gg.TYPE_QWORD, value = "h00 00 80 D2 C0 03 5F D6"}})
+gg.toast("Active")
+end,
+function()
+end
+),
+
+changan.switch(		
+"No Reload",
+function()
+local so = gg.getRangesList('libunity.so')[1].start
+local py = 0x96D4868
 gg.setValues({{address = so + py, flags = gg.TYPE_QWORD, value = "h002C40BCC0035FD6"}})
-gg.toast("FAST SCOPE ACTIVATED")
+gg.toast("Active")
+end,
+
+function()
+
+gg.toast("Nonaktif")					
 end
 
-function nopara()
-  local so = gg.getRangesList('libunity.so')[1].start
-  local py = 0x89B471C
-  gg.setValues({{address = so + py, flags = gg.TYPE_QWORD, value = "h000080D2C0035FD6"}})
-  gg.toast("NO PARACHUTE ACTIVATED")
-  end
+),
 
-function slides()
-s = gg.prompt({"SLIDE SPEED ADJUSTABLE [1; 30]"}, nil, {"number"})
-unity = gg.getRangesList("libunity.so")[1].start 
-setValues(unity + 0x89D2A94, 4, "~A8 LDR S0, [PC,#0x8]")
-setValues(unity + 0x89D2A94 + 4, 4, "~A8 RET")
-setValues(unity + 0x89D2A94 + 8, 16, s[1])
-gg.toast("SLIDE SPEED ACTIVATED")
+changan.switch("HitBox-Expand",
+function()
+il2cpp=gg.getRangesList("libunity.so")[1].start
+BUFF = 0x8650ADC
+setValues(il2cpp + BUFF, 32, "h20 01 80 D2 C0 03 5F D6")
+gg.toast("Active")
+end,
+function()
 end
+),
 
-function esp()
-local so = gg.getRangesList('libunity.so')[1].start
-local py = 0x4C5D4B8
-gg.setValues({{address = so + py, flags = gg.TYPE_QWORD, value = "h200080D2C0035FD6"}})
-local so = gg.getRangesList('libunity.so')[1].start
-local py = 0x4C5D55C
-gg.toast("ESP NAME BR ACTIVATED")
-end
-
-function current()
-local so = gg.getRangesList('libunity.so')[1].start
-local py = 0x4939560
-gg.setValues({{address = so + py, flags = gg.TYPE_QWORD, value = "h200080D2C0035FD6"}})
-local so = gg.getRangesList('libunity.so')[1].start
-local py = 0x493959C
-gg.setValues({{address = so + py, flags = gg.TYPE_QWORD, value = "h200080D2C0035FD6"}})
-gg.toast("UNLI CURRENT AMMO")
-end
-
-function speed()
-local so = gg.getRangesList('libunity.so')[1].start
-local py = 0x5AACB48
-gg.setValues({{address = so + py, flags = gg.TYPE_QWORD, value = "h200080D2C0035FD6"}})
-gg.toast("SPEEDWALK ACTIVATED")
-end
-
-function rapid()
-unity = gg.getRangesList("libunity.so")[1].start 
-setValues(unity + 0x96D3AD8, 4, "~A8 LDR S0, [PC,#0x8]") --Sniper, Shotgun
-setValues(unity + 0x96D3AD8 + 4, 4, "~A8 RET")
-setValues(unity + 0x96D3AD8 + 8, 16, 10)
-gg.toast("RAPID FIRE ACTIVATED")
-end
-   
-function fastswim()
-local so = gg.getRangesList('libunity.so')[1].start
-local py = 0x5B94CCC
-gg.setValues({{address = so + py, flags = gg.TYPE_QWORD, value = "h000080D2C0035FD6"}})
-gg.toast("FAST SWIM ACTIVATED")
-end
-
-function aimsmall()
-local so = gg.getRangesList('libunity.so')[1].start
-local py = 0x864E300
-gg.setValues({{address = so + py, flags = gg.TYPE_QWORD, value = "h200080D2C0035FD6"}})
-local so = gg.getRangesList('libunity.so')[1].start
-local py = 0x864E3F0
-gg.setValues({{address = so + py, flags = gg.TYPE_QWORD, value = "h200080D2C0035FD6"}})
-gg.toast("AIM WITH CROSSHAIR ACTIVATED")
-end
-
-function infinite()
-local so = gg.getRangesList('libunity.so')[1].start
-local py = 0x89D2BC8
-gg.setValues({{address = so + py, flags = gg.TYPE_QWORD, value = "h200080D2C0035FD6"}})
-gg.toast("INFINITE SLIDE ACTIVATED")
-end
-
-function spam()
+changan.switch("Pump Boost",
+function()
 so = gg.getRangesList('libunity.so')[1].start
 py = 0x70F440C
 setValues(so + py, 32, "h 20 00 80 D2 C0 03 5F D6")
 setValues(so + py + 4, 32, "hC0035FD600007A44")
 setValues(so + py + 8, 16, 100000000)
-gg.toast("UNLIPUMP ACTIVATED")
+gg.toast("Activated")
+end,
+function()
 end
+),
 
-function sw()
-unity = gg.getRangesList("libunity.so")[1].start 
-setValues(unity + 0x96D5410, 4, "~A8 LDR S0, [PC,#0x8]") --Sniper, Shotgun
-setValues(unity + 0x96D5410 + 4, 4, "~A8 RET")
-setValues(unity + 0x96D5410 + 8, 16, 0)
-gg.toast("FAST SWITCH ACTIVATED")
-end
-
-function buff()
+changan.switch(
+			"Fps Booster",						
+				function()
 il2cpp=gg.getRangesList("libunity.so")[1].start
-BUFF = 0x8652C5C
-setValues(il2cpp + BUFF, 4, "~A8 LDR  S0, [PC,#0x8]")
-setValues(il2cpp + BUFF + 0x4, 4, "~A8 RET")
-setValues(il2cpp + BUFF + 0x8, 16, 100)
-BUFF = 0x8652E2C
-setValues(il2cpp + BUFF, 4, "~A8 LDR  S0, [PC,#0x8]")
-setValues(il2cpp + BUFF + 0x4, 4, "~A8 RET")
-setValues(il2cpp + BUFF + 0x8, 16, 100)
-BUFF = 0x86529C4
-setValues(il2cpp + BUFF, 4, "~A8 LDR  S0, [PC,#0x8]")
-setValues(il2cpp + BUFF + 0x4, 4, "~A8 RET")
-setValues(il2cpp + BUFF + 0x8, 16, 100)
-gg.toast("BUFF DAMAGE ACTIVATED")
+local HexPatches = {}
+function BOBO(Lib,Offset,Edit,Type)
+local Ranges = gg.getRangesList(Lib)
+local v = {}
+v[1] = {}
+v[1].address = Ranges[1].start + Offset
+v[1].flags = Type
+v[1].value = Edit.."r"
+v[1].freeze = true
+gg.setValues(v)
 end
+BOBO("libunity.so", 0x8540054, "h200080D2C0035FD6", 32);
+BOBO("libunity.so", 0x853B6BC, "h200080D2C0035FD6", 32);
+BOBO("libunity.so", 0x853BD78, "h200080D2C0035FD6", 32);
+BOBO("libunity.so", 0x8546ED4, "h200080D2C0035FD6", 32);
+BOOSTER1 = 0x49D9FB8
+setValues(il2cpp + BOOSTER1, 4, "~A8 RET")
+setValues(il2cpp + BOOSTER1 + 0x4, 4, "~A8 RET")
+setValues(il2cpp + BOOSTER1 + 0x8, 16, 120)
+BOOSTER2 = 0x853B7CC
+setValues(il2cpp + BOOSTER2, 4, "~A8 RET")
+setValues(il2cpp + BOOSTER2 + 0x4, 4, "~A8 RET")
+setValues(il2cpp + BOOSTER2 + 0x8, 16, 120)
+BOOSTER3 = 0x853C378
+setValues(il2cpp + BOOSTER3, 4, "~A8 RET")
+setValues(il2cpp + BOOSTER3 + 0x4, 4, "~A8 RET")
+setValues(il2cpp + BOOSTER3 + 0x8, 16, 120)
+BOOSTER4 = 0x853B1F8
+setValues(il2cpp + BOOSTER4, 4, "~A8 RET")
+setValues(il2cpp + BOOSTER4 + 0x4, 4, "~A8 RET")
+setValues(il2cpp + BOOSTER4 + 0x8, 16, 120)
+BOOSTER5 = 0x49D9E94
+setValues(il2cpp + BOOSTER5, 4, "~A8 RET")
+setValues(il2cpp + BOOSTER5 + 0x4, 4, "~A8 RET")
+setValues(il2cpp + BOOSTER5 + 0x8, 16, 120)
+gg.toast("Activated")
+				end
+				),
 
-function shake()
+changan.switch(
+"Esp Name Br",
+function()
 local so = gg.getRangesList('libunity.so')[1].start
-local py = 0x844C31C
-gg.setValues({{address = so + py, flags = gg.TYPE_QWORD, value = "h200080D2C0035FD6"}}) 
-gg.toast("NO SHAKE ACTIVATED")
-end
+local py = 0x4C5D4B8
+gg.setValues({{address = so + py, flags = gg.TYPE_QWORD, value = "h200080D2C0035FD6"}})
+local so = gg.getRangesList('libunity.so')[1].start
+local py = 0x4C5D55C
+end,
+function()
 
-function execution()
+end ),
+
+ changan.switch(
+"Snow Board Speed",			
+				function()
+so = gg.getRangesList('libunity.so')[1].start
+py = 0x5A9A074
+setValues(so + py, 32, "h4000001CC0035FD6")
+setValues(so + py + 4, 32, "hC0035FD600007A44")
+setValues(so + py + 8, 16, 1000000)
+gg.toast("Activated")
+				end
+				),
+
+changan.switch(		
+"Long Execution",
+function()
 HexPatches.PirateMODZ("libunity", 0x8552320, " h000080D2C0035FD6", 32);
 HexPatches.PirateMODZ("libunity", 0x8540054, " h000080D2C0035FD6", 32);
 HexPatches.PirateMODZ("libunity", 0x853C594, " h002480D2C0035FD6", 32);
@@ -786,1299 +2070,60 @@ gg.setValues({{address = so + py, flags = gg.TYPE_QWORD, value = "h000080D2C0035
 local so = gg.getRangesList('libunity.so')[1].start 
 local py = 0x70BF564 
 gg.setValues({{address = so + py, flags = gg.TYPE_QWORD, value = "h200080D2C0035FD6"}})
-gg.toast("LONG EXECUTION ACTIVATED")
-end
-
-function weaprange()
-unity = gg.getRangesList("libunity.so")[1].start 
-setValues(unity + 0x96D6444, 4, "~A8 LDR S0, [PC,#0x8]") --Sniper, Shotgun
-setValues(unity + 0x96D6444 + 4, 4, "~A8 RET")
-setValues(unity + 0x96D6444 + 8, 16, 10)
-gg.toast("EXTENDED RANGE ACTIVATED")
-end
-
-function snowspeed()
-so = gg.getRangesList('libunity.so')[1].start
-py = 0x5A9A074
-setValues(so + py, 32, "h4000001CC0035FD6")
-setValues(so + py + 4, 32, "hC0035FD600007A44")
-setValues(so + py + 8, 16, 1000000)
-gg.toast("SNOWBOARD SPEED ACTIVATED")
-end
-function water()
-local so = gg.getRangesList('libunity.so')[1].start 
-local py = 0x5A492D4 
-gg.setValues({{address = so + py, flags = gg.TYPE_QWORD, value = "h200080D2C0035FD6"}})
-local so = gg.getRangesList('libunity.so')[1].start 
-local py = 0x5A65F6C
-gg.setValues({{address = so + py, flags = gg.TYPE_QWORD, value = "h200080D2C0035FD6"}})
-local so = gg.getRangesList('libunity.so')[1].start 
-local py = 0x5B967F8 
-gg.setValues({{address = so + py, flags = gg.TYPE_QWORD, value = "h200080D2C0035FD6"}})
-gg.toast("WALK UNDERWATER ACTIVATED")
-	end
-
-function A3() 
-e = gg.prompt({
-"☠️ SLIDE SPEED ADJUSTABLE [IN-GAME]",
-"☠️ SPEED WALK ADJUSTABLE [IN-GAME]",
-"☠️ BLACK SKY MO ONLY [IN-GAME]",
-"☠️ ANTENNA V2 ALK DEVICES [IN-GAME]",
-"☠️ ANTENNA LIGHT ADJUSTABLE COLOR [IN-GAME]",
-"☠️ SKY COLOR SNAPDRAGON ONLY [IN-GAME]",
-"☠️ AIMBOT BRUTAL ADJUSTABLE [IN-GAME]",
-"☠️ WHITE BODY [IN-GAME]",
-"☠️ NO RECOIL [IN-GAME]",
-"☠️ SPEED WALK [IN-GAME]",
-"☠️ HIGH JUMP MP | BR [IN-GAME]",
-"☠️ LONG HEAD [IN-GAME]",
-"☠️ INFINITE SLIDE [IN-GAME]",
-"☠️ EXPANDED HITBOX [IN-GAME]",
-"☠️ AIM SMOOTH ADJUSTABLE [IN-GAME]",
-"☠️ REDLINE ALL DEVICE [IN-GAME]",
-"☠️ HIGH JUMP ADJUSTABLE",
-"☠️ WALLHACK V2",
-"☠️ NO RELOAD [IN-GAME]",
-"☠️ WALL SHOT [IN-GAME]",
-"☠️ SLOW FALL [IN-GAME]",
-"☠️ FROG JUMP [IN-GAME]",
-"☠️ POTATO GRAPHICS [IN-GAME]",
-"☠️ STATIC HITBOX [IN-GAME]",
-"☠️ WALL CLIMB [IN-GAME]",
-"☠️ NO SMOKE [IN-GAME]",
-"☠️ BIG BODY ENEMY [IN-GAME]",
-"☠️ UNLI PUMP [IN-GAME]",
-"☠️ FLY HACK [IN-GAME]",
-"☠️ HIGH FOV FPP ONLY [IN-GAME]",
-"◻️ ʙᴀᴄᴋ", 
-}, nil, {
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    "checkbox",
-    })
-if e == nil then else
-if e[1] == true then whs() end
-if e[2] == true then redwh() end
-if e[3] == true then nah() end
-if e[4] == true then line() end
-if e[5] == true then antenna() end
-if e[6] == true then sky() end
-if e[7] == true then aim() end
-if e[8] == true then body() end
-if e[9] == true then rc() end
-if e[10] == true then walk() end
-if e[11] == true then jump() end
-if e[12] == true then neck() end
-if e[13] == true then slide() end
-if e[14] == true then hitbox() end
-if e[15] == true then aimlock() end
-if e[16] == true then sniper() end
-if e[17] == true then jumpv2() end
-if e[18] == true then whv2() end
-if e[19] == true then reload() end
-if e[20] == true then shot() end
-if e[21] == true then wallhack() end
-if e[22] == true then frog() end
-if e[23] == true then potato() end
-if e[24] == true then static() end
-if e[25] == true then wallclimb() end
-if e[26] == true then nosmoke() end
-if e[27] == true then bigbody() end
-if e[28] == true then unlipump() end
-if e[29] == true then flyhack() end
-if e[30] == true then fov() end
-if e[31] == true then home() end
-end
-end
-
-
-
-function whs()
-slide1 = gg.prompt({"Slide Speed Adjustable [1; 50]"}, {[1] = data}, {[1] = 'number'})
-if slide1 == nil then else
-data = slide1[1]
-
-
-function SearchWrite(Search, Write, Type) gg.clearResults() gg.setVisible(false) gg.searchNumber(Search[1][1], Type) local count = gg.getResultCount() local result = gg.getResults(count) gg.clearResults() local data = {} local base = Search[1][2] if (count > 0) then for i, v in ipairs(result) do v.isUseful = true end for k=2, #Search do local tmp = {} local offset = Search[k][2] - base local num = Search[k][1] for i, v in ipairs(result) do tmp[#tmp+1] = {} tmp[#tmp].address = v.address + offset tmp[#tmp].flags = v.flags end tmp = gg.getValues(tmp) for i, v in ipairs(tmp) do if ( tostring(v.value) ~= tostring(num) ) then result[i].isUseful = false end end end for i, v in ipairs(result) do if (v.isUseful) then data[#data+1] = v.address end end if (#data > 0) then gg.toast('VALUE FOUND '..#data..' EDITED') local t = {} local base = Search[1][2] for i=1, #data do for k, w in ipairs(Write) do offset = w[2] - base t[#t+1] = {} t[#t].address = data[i] + offset t[#t].flags = Type t[#t].value = w[1] if (w[3] == true) then local item = {} item[#item+1] = t[#t] item[#item].freeze = true gg.addListItems(item) end end end gg.setValues(t) else gg.alert('VALUE NOT FOUND') return false end else gg.alert('VALUE NOT FOUND') return false end end
-EPICSXZ = tostring(slide1[1])
-EPICSXZ1 = tostring(slide1[1])
-      gg.setRanges(32)
-      local Epicsxz3 = 16
-      local Name ="LONGSLIDE"
-      local Epicsxz1 = {{4.5, 0}, {0.25, -8}, {5.0, -20}}
-      local Epicsxz2 = {{EPICSXZ, 4}, {EPICSXZ1, 8}}
-      SearchWrite(Epicsxz1, Epicsxz2, Epicsxz3)
-gg.toast("Long Slide Aᴄᴛɪᴠᴀᴛᴇ")
-end
-end
-
-
-function redwh()
-gg.setRanges(gg.REGION_ANONYMOUS)
-V=gg.prompt({"🏃??sᴇᴛ sᴘᴇᴇᴅ ᴛᴏ🏃🏻‍♀[1;40]"},{Y},{"number"}) 
-for i = 1,5 do gg.sleep(100) gg.setVisible(false) gg.toast("Starting SpeedHack: "..V[1]) end
-if V[2] == true then
-gg.searchNumber("4.28000020981;3.20000004768", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
-else
-gg.searchNumber("4.28000020981;3.20000004768", gg.TYPE_FLOAT)
-gg.refineNumber("4.28000020981;3.20000004768", gg.TYPE_FLOAT)
-end
--------------------------------(NoLag_Test)------------------------
-speedmenubar=tonumber(V[1]) 
----------------------------------------------------------------------------
-if speedmenubar == 6 then
-gg.getResults(999)
-gg.editAll("6", gg.TYPE_FLOAT)
-gg.clearResults()
-else
-end
-if speedmenubar == 7 then
-gg.getResults(999)
-gg.editAll("7", gg.TYPE_FLOAT)
-gg.clearResults()
-else
-end
-if speedmenubar == 8 then
-gg.getResults(999)
-gg.editAll("8", gg.TYPE_FLOAT)
-gg.clearResults()
-else
-end
-if speedmenubar == 9 then
-gg.getResults(999)
-gg.editAll("9", gg.TYPE_FLOAT)
-gg.clearResults()
-else
-end
-if speedmenubar == 10 then
-gg.getResults(999)
-gg.editAll("10", gg.TYPE_FLOAT)
-gg.clearResults()
-else
-end
-if speedmenubar == 11 then
-gg.getResults(999)
-gg.editAll("11", gg.TYPE_FLOAT)
-gg.clearResults()
-else
-end
-if speedmenubar == 12 then
-gg.getResults(999)
-gg.editAll("12", gg.TYPE_FLOAT)
-gg.clearResults()
-else
-end
-if speedmenubar == 13 then
-gg.getResults(999)
-gg.editAll("13", gg.TYPE_FLOAT)
-gg.clearResults()
-else
-end
-if speedmenubar == 14 then
-gg.getResults(999)
-gg.editAll("14", gg.TYPE_FLOAT)
-gg.clearResults()
-else
-end
-if speedmenubar == 15 then
-gg.getResults(999)
-gg.editAll("15", gg.TYPE_FLOAT)
-gg.clearResults()
-else
-end
-if speedmenubar == 16 then
-gg.getResults(999)
-gg.editAll("16", gg.TYPE_FLOAT)
-gg.clearResults()
-else
-end
-if speedmenubar == 17 then
-gg.getResults(999)
-gg.editAll("17", gg.TYPE_FLOAT)
-gg.clearResults()
-else
-end
-if speedmenubar == 18 then
-gg.getResults(999)
-gg.editAll("18", gg.TYPE_FLOAT)
-gg.clearResults()
-else
-end
-if speedmenubar == 19 then
-gg.getResults(999)
-gg.editAll("19", gg.TYPE_FLOAT)
-gg.clearResults()
-else
-end
-if speedmenubar == 20 then
-gg.getResults(999)
-gg.editAll("20", gg.TYPE_FLOAT)
-gg.clearResults()
-else
-end
-if speedmenubar == 21 then
-gg.getResults(999)
-gg.editAll("21", gg.TYPE_FLOAT)
-gg.clearResults()
-else
-end
-if speedmenubar == 22 then
-gg.getResults(999)
-gg.editAll("22", gg.TYPE_FLOAT)
-gg.clearResults()
-else
-end
-if speedmenubar == 23 then
-gg.getResults(999)
-gg.editAll("23", gg.TYPE_FLOAT)
-gg.clearResults()
-else
-end
-if speedmenubar == 24 then
-gg.getResults(999)
-gg.editAll("24", gg.TYPE_FLOAT)
-gg.clearResults()
-else
-end
-if speedmenubar == 25 then
-gg.getResults(999)
-gg.editAll("25", gg.TYPE_FLOAT)
-gg.clearResults()
-else
-end
-if speedmenubar == 26 then
-gg.getResults(999)
-gg.editAll("26", gg.TYPE_FLOAT)
-gg.clearResults()
-else
-end
-if speedmenubar == 27 then
-gg.getResults(999)
-gg.editAll("27", gg.TYPE_FLOAT)
-gg.clearResults()
-else
-end
-if speedmenubar == 28 then
-gg.getResults(999)
-gg.editAll("28", gg.TYPE_FLOAT)
-gg.clearResults()
-else
-end
-if speedmenubar == 29 then
-gg.getResults(999)
-gg.editAll("29", gg.TYPE_FLOAT)
-gg.clearResults()
-else
-end
-if speedmenubar == 30 then
-gg.getResults(999)
-gg.editAll("30", gg.TYPE_FLOAT)
-gg.clearResults()
-	else
-	end
-if speedmenubar == 31 then
-gg.getResults(999)
-gg.editAll("31", gg.TYPE_FLOAT)
-gg.clearResults()
-else
-end
-if speedmenubar == 32 then
-gg.getResults(999)
-gg.editAll("32", gg.TYPE_FLOAT)
-gg.clearResults()
-else
-end
-if speedmenubar == 33 then
-gg.getResults(999)
-gg.editAll("33", gg.TYPE_FLOAT)
-gg.clearResults()
-else
-end
-if speedmenubar == 34 then
-gg.getResults(999)
-gg.editAll("34", gg.TYPE_FLOAT)
-gg.clearResults()
-else
-end
-if speedmenubar == 35 then
-gg.getResults(999)
-gg.editAll("35", gg.TYPE_FLOAT)
-gg.clearResults()
-else
-end
-if speedmenubar == 36 then
-gg.getResults(999)
-gg.editAll("36", gg.TYPE_FLOAT)
-gg.clearResults()
-else
-end
-if speedmenubar == 37 then
-gg.getResults(999)
-gg.editAll("37", gg.TYPE_FLOAT)
-gg.clearResults()
-else
-end
-if speedmenubar == 38 then
-gg.getResults(999)
-gg.editAll("38", gg.TYPE_FLOAT)
-gg.clearResults()
-else
-end
-if speedmenubar == 39 then
-gg.getResults(999)
-gg.editAll("39", gg.TYPE_FLOAT)
-gg.clearResults()
-else
-end
-if speedmenubar == 40 then
-gg.getResults(999)
-gg.editAll("40", gg.TYPE_FLOAT)
-gg.clearResults()
-gg.toast("SPEED HACK ACTIVATED")
-end
-end
-
-function nah()
-gg.setRanges(gg.REGION_C_ALLOC)
-gg.searchNumber("2.25;2.25002574921;1.46940157e-39",gg.POINTER_WRITABLE)
-gg.refineNumber("2.25", 16, false, 536870912, 0, -1)
-var = gg.getResults(1000)
-gg.editAll("0",gg.POINTER_WRITABLE)gg.clearResults()
-gg.toast("ᴀᴄᴛɪᴠᴀᴛᴇ ʙʟᴀᴄᴋ sᴋʏ")
-end
-
-function line()
-gg.setRanges(gg.REGION_C_ALLOC | gg.REGION_OTHER)
-gg.setVisible(false)
-gg.searchNumber("h 00 00 80 40 00 00 80 3F 00 00 80 3F 00 00 00 00 00 00 00 00 00 00 40 40", gg.TYPE_BYTE, false, gg.SIGN_EQUAL, 0, -1)
-local results = gg.getResults(99999)
-gg.editAll("h 00 00 48 42 00 00 80 3F 00 00 96 43 00 00 00 00 00 00 00 00 00 00 40 40", gg.TYPE_BYTE)
-gg.clearResults()
-gg.toast("ᴀᴄᴛɪᴠᴀᴛᴇ ʀᴇᴅʟɪɴᴇ")
-end
-
-function antenna()
-ant1 = gg.multiChoice({
-"Magic Bullet",
-"Antenna_Red",
-"Antenna_Pink",
-"Antenna_Blue",
-"Antenna_Cyan",
-"Antenna_Black",
-"Antenna_White",
-"Antenna_Green",
-"Antenna_Purple",
-"Antenna_Yellow",
-"Antenna_Orange",
-"Light_Red",
-"Light_Pink",
-"Light_Blue",
-"Light_Cyan",
-"Light_Green",
-"Back",
-})
-if ant1 == nil then
-gg.setVisible(false)
-else
-if ant1[1] == true then grap() end
-if ant1[2] == true then red() end
-if ant1[3] == true then pink() end
-if ant1[4] == true then blue() end
-if ant1[5] == true then cyan() end
-if ant1[6] == true then black() end
-if ant1[7] == true then white() end
-if ant1[8] == true then green() end
-if ant1[9] == true then purple() end
-if ant1[10] == true then yellow() end
-if ant1[11] == true then orange() end
-if ant1[12] == true then red1() end
-if ant1[13] == true then pink1() end
-if ant1[14] == true then blue1() end
-if ant1[15] == true then cyan1() end
-if ant1[16] == true then green1() end
-if ant1 == nil then cancel() end
-end
-end
-
-function grap()
-graps = gg.multiChoice({
-"𝙼𝚊𝚐𝚒𝚌 𝙱𝚞𝚕𝚕𝚎𝚝 𝙷𝚎𝚊𝚍",
-"𝙼𝚊𝚐𝚒𝚌 𝙱𝚞𝚕𝚕𝚎𝚝 𝙱𝚘𝚍𝚢",
-"𝚋𝚊𝚌𝚔",
-})
-if graps == nil then
-gg.setVisible(false)
-else
-if graps[1] == true then frame() end
-if graps[2] == true then med() end
-if graps == nil then cancel() end
-end
-end
-
-	
-function frame()
-gg.setRanges(gg.REGION_ANONYMOUS)
-gg.setVisible(false)
-gg.searchNumber("0.1439999938", gg.TYPE_FLOAT)
-gg.refineNumber("0.1439999938", gg.TYPE_FLOAT)
-gg.getResults(9999)
-gg.editAll("1.8", gg.TYPE_FLOAT)
-gg.clearResults()
-gg.setRanges(gg.REGION_ANONYMOUS)
-gg.setVisible(false)
-gg.searchNumber("0.1439999938", gg.TYPE_FLOAT)
-gg.refineNumber("0.1439999938", gg.TYPE_FLOAT)
-gg.getResults(9999)
-gg.editAll("1.8", gg.TYPE_FLOAT)
-gg.clearResults()
-gg.toast("𝙈𝙖𝙜𝙞𝙘 𝙃𝙚𝙖𝙙 𝘼𝙘𝙩𝙞𝙫𝙖𝙩𝙚𝙙")
-end
-	
-function med()
-gg.setRanges(gg.REGION_ANONYMOUS)
-gg.setVisible(false)
-gg.searchNumber("0.18500000238", gg.TYPE_FLOAT)
-gg.refineNumber("0.18500000238", gg.TYPE_FLOAT)
-gg.getResults(9999)
-gg.editAll("1.78500000238", gg.TYPE_FLOAT)
-gg.clearResults()
-gg.setRanges(gg.REGION_ANONYMOUS)
-gg.setVisible(false)
-gg.searchNumber("0.18500000238", gg.TYPE_FLOAT)
-gg.refineNumber("0.18500000238", gg.TYPE_FLOAT)
-gg.getResults(9999)
-gg.editAll("1.78500000238", gg.TYPE_FLOAT)
-gg.clearResults()
-gg.toast("𝙈𝙖𝙜𝙞𝙘 𝘽𝙤𝙙𝙮 𝘼𝙘𝙩𝙞𝙫𝙖𝙩𝙚𝙙")
-end
-
-function red()
-function SearchWrite(Search, Write, Type) gg.clearResults() gg.setVisible(false) gg.searchNumber(Search[1][1], Type) local count = gg.getResultCount() local result = gg.getResults(count) gg.clearResults() local data = {} local base = Search[1][2] if (count > 0) then for i, v in ipairs(result) do v.isUseful = true end for k=2, #Search do local tmp = {} local offset = Search[k][2] - base local num = Search[k][1] for i, v in ipairs(result) do tmp[#tmp+1] = {} tmp[#tmp].address = v.address + offset tmp[#tmp].flags = v.flags end tmp = gg.getValues(tmp) for i, v in ipairs(tmp) do if ( tostring(v.value) ~= tostring(num) ) then result[i].isUseful = false end end end for i, v in ipairs(result) do if (v.isUseful) then data[#data+1] = v.address end end if (#data > 0) then gg.toast('VALUE FOUND '..#data..' EDITED') local t = {} local base = Search[1][2] for i=1, #data do for k, w in ipairs(Write) do offset = w[2] - base t[#t+1] = {} t[#t].address = data[i] + offset t[#t].flags = Type t[#t].value = w[1] if (w[3] == true) then local item = {} item[#item+1] = t[#t] item[#item].freeze = true gg.addListItems(item) end end end gg.setValues(t) else gg.alert('VALUE NOT FOUND') return false end else gg.alert('VALUE NOT FOUND') return false end end
-AJLhax = 999
-AJLhax1 = 0
-AJLhax2 = 0
-AJLhax3 = 999
-AJLhax4 = 1
-AJLhax5 = 999
-AJLhax6 = 999
-AJLhax7 = 999
-AJLhax8 = 4
-      gg.setRanges(4)
-      local dataType = 16
-      local Name ="ANTENNA RED"
-      local tb1 = {{256.0, 0}, {3.0, 40}, {5.0, 68}}
-      local tb2 = {{AJLhax, -80}, {AJLhax1, -76}, {AJLhax2,-72},  {AJLhax3, -68}, {AJLhax4, -64}, {AJLhax5, -28}, {AJLhax6, -24}, {AJLhax7, 28}, {AJLhax8, 20}}
-      SearchWrite(tb1, tb2, dataType)  
-gg.toast("Antenna Red")
-end
-
-
-function pink()
-function SearchWrite(Search, Write, Type) gg.clearResults() gg.setVisible(false) gg.searchNumber(Search[1][1], Type) local count = gg.getResultCount() local result = gg.getResults(count) gg.clearResults() local data = {} local base = Search[1][2] if (count > 0) then for i, v in ipairs(result) do v.isUseful = true end for k=2, #Search do local tmp = {} local offset = Search[k][2] - base local num = Search[k][1] for i, v in ipairs(result) do tmp[#tmp+1] = {} tmp[#tmp].address = v.address + offset tmp[#tmp].flags = v.flags end tmp = gg.getValues(tmp) for i, v in ipairs(tmp) do if ( tostring(v.value) ~= tostring(num) ) then result[i].isUseful = false end end end for i, v in ipairs(result) do if (v.isUseful) then data[#data+1] = v.address end end if (#data > 0) then gg.toast('VALUE FOUND '..#data..' EDITED') local t = {} local base = Search[1][2] for i=1, #data do for k, w in ipairs(Write) do offset = w[2] - base t[#t+1] = {} t[#t].address = data[i] + offset t[#t].flags = Type t[#t].value = w[1] if (w[3] == true) then local item = {} item[#item+1] = t[#t] item[#item].freeze = true gg.addListItems(item) end end end gg.setValues(t) else gg.alert('VALUE NOT FOUND') return false end else gg.alert('VALUE NOT FOUND') return false end end
-AJLhax = 50
-AJLhax1 = 1
-AJLhax2 = 999
-AJLhax3 = 999
-AJLhax4 = 1
-AJLhax5 = 999
-AJLhax6 = 999
-AJLhax7 = 999
-AJLhax8 = 4
-      gg.setRanges(4)
-      local dataType = 16
-      local Name ="ANTENNA PINK"
-      local tb1 = {{256.0, 0}, {3.0, 40}, {5.0, 68}}
-      local tb2 = {{AJLhax, -80}, {AJLhax1, -76}, {AJLhax2,-72},  {AJLhax3, -68}, {AJLhax4, -64}, {AJLhax5, -28}, {AJLhax6, -24}, {AJLhax7, 28}, {AJLhax8, 20}}
-      SearchWrite(tb1, tb2, dataType)  
-gg.toast("Antenna Pink")
-end
-
-
-function blue()
-function SearchWrite(Search, Write, Type) gg.clearResults() gg.setVisible(false) gg.searchNumber(Search[1][1], Type) local count = gg.getResultCount() local result = gg.getResults(count) gg.clearResults() local data = {} local base = Search[1][2] if (count > 0) then for i, v in ipairs(result) do v.isUseful = true end for k=2, #Search do local tmp = {} local offset = Search[k][2] - base local num = Search[k][1] for i, v in ipairs(result) do tmp[#tmp+1] = {} tmp[#tmp].address = v.address + offset tmp[#tmp].flags = v.flags end tmp = gg.getValues(tmp) for i, v in ipairs(tmp) do if ( tostring(v.value) ~= tostring(num) ) then result[i].isUseful = false end end end for i, v in ipairs(result) do if (v.isUseful) then data[#data+1] = v.address end end if (#data > 0) then gg.toast('VALUE FOUND '..#data..' EDITED') local t = {} local base = Search[1][2] for i=1, #data do for k, w in ipairs(Write) do offset = w[2] - base t[#t+1] = {} t[#t].address = data[i] + offset t[#t].flags = Type t[#t].value = w[1] if (w[3] == true) then local item = {} item[#item+1] = t[#t] item[#item].freeze = true gg.addListItems(item) end end end gg.setValues(t) else gg.alert('VALUE NOT FOUND') return false end else gg.alert('VALUE NOT FOUND') return false end end
-AJLhax = 0
-AJLhax1 = 1
-AJLhax2 = 999
-AJLhax3 = 999
-AJLhax4 = 1
-AJLhax5 = 999
-AJLhax6 = 999
-AJLhax7 = 999
-AJLhax8 = 4
-      gg.setRanges(4)
-      local dataType = 16
-      local Name ="ANTENNA BLUE"
-      local tb1 = {{256.0, 0}, {3.0, 40}, {5.0, 68}}
-      local tb2 = {{AJLhax, -80}, {AJLhax1, -76}, {AJLhax2,-72},  {AJLhax3, -68}, {AJLhax4, -64}, {AJLhax5, -28}, {AJLhax6, -24}, {AJLhax7, 28}, {AJLhax8, 20}}
-      SearchWrite(tb1, tb2, dataType)  
-gg.toast("Antenna BLUE")
-end
-
-
-function cyan()
-function SearchWrite(Search, Write, Type) gg.clearResults() gg.setVisible(false) gg.searchNumber(Search[1][1], Type) local count = gg.getResultCount() local result = gg.getResults(count) gg.clearResults() local data = {} local base = Search[1][2] if (count > 0) then for i, v in ipairs(result) do v.isUseful = true end for k=2, #Search do local tmp = {} local offset = Search[k][2] - base local num = Search[k][1] for i, v in ipairs(result) do tmp[#tmp+1] = {} tmp[#tmp].address = v.address + offset tmp[#tmp].flags = v.flags end tmp = gg.getValues(tmp) for i, v in ipairs(tmp) do if ( tostring(v.value) ~= tostring(num) ) then result[i].isUseful = false end end end for i, v in ipairs(result) do if (v.isUseful) then data[#data+1] = v.address end end if (#data > 0) then gg.toast('VALUE FOUND '..#data..' EDITED') local t = {} local base = Search[1][2] for i=1, #data do for k, w in ipairs(Write) do offset = w[2] - base t[#t+1] = {} t[#t].address = data[i] + offset t[#t].flags = Type t[#t].value = w[1] if (w[3] == true) then local item = {} item[#item+1] = t[#t] item[#item].freeze = true gg.addListItems(item) end end end gg.setValues(t) else gg.alert('VALUE NOT FOUND') return false end else gg.alert('VALUE NOT FOUND') return false end end
-AJLhax = 0
-AJLhax1 = 999
-AJLhax2 = 999
-AJLhax3 = 999
-AJLhax4 = 1
-AJLhax5 = 999
-AJLhax6 = 999
-AJLhax7 = 999
-AJLhax8 = 4
-      gg.setRanges(4)
-      local dataType = 16
-      local Name ="ANTENNA CYAN"
-      local tb1 = {{256.0, 0}, {3.0, 40}, {5.0, 68}}
-      local tb2 = {{AJLhax, -80}, {AJLhax1, -76}, {AJLhax2,-72},  {AJLhax3, -68}, {AJLhax4, -64}, {AJLhax5, -28}, {AJLhax6, -24}, {AJLhax7, 28}, {AJLhax8, 20}}
-      SearchWrite(tb1, tb2, dataType)  
-gg.toast("Antenna Cyan")
-end
-
-
-function black()
-function SearchWrite(Search, Write, Type) gg.clearResults() gg.setVisible(false) gg.searchNumber(Search[1][1], Type) local count = gg.getResultCount() local result = gg.getResults(count) gg.clearResults() local data = {} local base = Search[1][2] if (count > 0) then for i, v in ipairs(result) do v.isUseful = true end for k=2, #Search do local tmp = {} local offset = Search[k][2] - base local num = Search[k][1] for i, v in ipairs(result) do tmp[#tmp+1] = {} tmp[#tmp].address = v.address + offset tmp[#tmp].flags = v.flags end tmp = gg.getValues(tmp) for i, v in ipairs(tmp) do if ( tostring(v.value) ~= tostring(num) ) then result[i].isUseful = false end end end for i, v in ipairs(result) do if (v.isUseful) then data[#data+1] = v.address end end if (#data > 0) then gg.toast('VALUE FOUND '..#data..' EDITED') local t = {} local base = Search[1][2] for i=1, #data do for k, w in ipairs(Write) do offset = w[2] - base t[#t+1] = {} t[#t].address = data[i] + offset t[#t].flags = Type t[#t].value = w[1] if (w[3] == true) then local item = {} item[#item+1] = t[#t] item[#item].freeze = true gg.addListItems(item) end end end gg.setValues(t) else gg.alert('VALUE NOT FOUND') return false end else gg.alert('VALUE NOT FOUND') return false end end
-AJLhax = 0
-AJLhax1 = 1
-AJLhax2 = 1
-AJLhax3 = 9999
-AJLhax4 = 0.1
-AJLhax5 = 999
-AJLhax6 = 999
-AJLhax7 = 999
-AJLhax8 = 4
-      gg.setRanges(4)
-      local dataType = 16
-      local Name ="ANTENNA BLACK"
-      local tb1 = {{256.0, 0}, {3.0, 40}, {5.0, 68}}
-      local tb2 = {{AJLhax, -80}, {AJLhax1, -76}, {AJLhax2,-72},  {AJLhax3, -68}, {AJLhax4, -64}, {AJLhax5, -28}, {AJLhax6, -24}, {AJLhax7, 28}, {AJLhax8, 20}}
-      SearchWrite(tb1, tb2, dataType)  
-gg.toast("Antenna Black")
-end
-
-
-function white()
-function SearchWrite(Search, Write, Type) gg.clearResults() gg.setVisible(false) gg.searchNumber(Search[1][1], Type) local count = gg.getResultCount() local result = gg.getResults(count) gg.clearResults() local data = {} local base = Search[1][2] if (count > 0) then for i, v in ipairs(result) do v.isUseful = true end for k=2, #Search do local tmp = {} local offset = Search[k][2] - base local num = Search[k][1] for i, v in ipairs(result) do tmp[#tmp+1] = {} tmp[#tmp].address = v.address + offset tmp[#tmp].flags = v.flags end tmp = gg.getValues(tmp) for i, v in ipairs(tmp) do if ( tostring(v.value) ~= tostring(num) ) then result[i].isUseful = false end end end for i, v in ipairs(result) do if (v.isUseful) then data[#data+1] = v.address end end if (#data > 0) then gg.toast('VALUE FOUND '..#data..' EDITED') local t = {} local base = Search[1][2] for i=1, #data do for k, w in ipairs(Write) do offset = w[2] - base t[#t+1] = {} t[#t].address = data[i] + offset t[#t].flags = Type t[#t].value = w[1] if (w[3] == true) then local item = {} item[#item+1] = t[#t] item[#item].freeze = true gg.addListItems(item) end end end gg.setValues(t) else gg.alert('VALUE NOT FOUND') return false end else gg.alert('VALUE NOT FOUND') return false end end
-AJLhax = 50
-AJLhax1 = 999
-AJLhax2 = 999
-AJLhax3 = 999
-AJLhax4 = 0.1
-AJLhax5 = 999
-AJLhax6 = 999
-AJLhax7 = 999
-AJLhax8 = 4
-      gg.setRanges(4)
-      local dataType = 16
-      local Name ="ANTENNA WHITE"
-      local tb1 = {{256.0, 0}, {3.0, 40}, {5.0, 68}}
-      local tb2 = {{AJLhax, -80}, {AJLhax1, -76}, {AJLhax2,-72},  {AJLhax3, -68}, {AJLhax4, -64}, {AJLhax5, -28}, {AJLhax6, -24}, {AJLhax7, 28}, {AJLhax8, 20}}
-      SearchWrite(tb1, tb2, dataType)  
-gg.toast("Antenna White")
-end
-
-function green()
-function SearchWrite(Search, Write, Type) gg.clearResults() gg.setVisible(false) gg.searchNumber(Search[1][1], Type) local count = gg.getResultCount() local result = gg.getResults(count) gg.clearResults() local data = {} local base = Search[1][2] if (count > 0) then for i, v in ipairs(result) do v.isUseful = true end for k=2, #Search do local tmp = {} local offset = Search[k][2] - base local num = Search[k][1] for i, v in ipairs(result) do tmp[#tmp+1] = {} tmp[#tmp].address = v.address + offset tmp[#tmp].flags = v.flags end tmp = gg.getValues(tmp) for i, v in ipairs(tmp) do if ( tostring(v.value) ~= tostring(num) ) then result[i].isUseful = false end end end for i, v in ipairs(result) do if (v.isUseful) then data[#data+1] = v.address end end if (#data > 0) then gg.toast('VALUE FOUND '..#data..' EDITED') local t = {} local base = Search[1][2] for i=1, #data do for k, w in ipairs(Write) do offset = w[2] - base t[#t+1] = {} t[#t].address = data[i] + offset t[#t].flags = Type t[#t].value = w[1] if (w[3] == true) then local item = {} item[#item+1] = t[#t] item[#item].freeze = true gg.addListItems(item) end end end gg.setValues(t) else gg.alert('VALUE NOT FOUND') return false end else gg.alert('VALUE NOT FOUND') return false end end
-AJLhax = 0
-AJLhax1 = 999
-AJLhax2 = 1
-AJLhax3 = 999
-AJLhax4 = 0.1
-AJLhax5 = 999
-AJLhax6 = 999
-AJLhax7 = 999
-AJLhax8 = 4
-      gg.setRanges(4)
-      local dataType = 16
-      local Name ="ANTENNA GREEN"
-      local tb1 = {{256.0, 0}, {3.0, 40}, {5.0, 68}}
-      local tb2 = {{AJLhax, -80}, {AJLhax1, -76}, {AJLhax2,-72},  {AJLhax3, -68}, {AJLhax4, -64}, {AJLhax5, -28}, {AJLhax6, -24}, {AJLhax7, 28}, {AJLhax8, 20}}
-      SearchWrite(tb1, tb2, dataType)  
-gg.toast("Antenna Green")
-end
-
-
-function purple()
-function SearchWrite(Search, Write, Type) gg.clearResults() gg.setVisible(false) gg.searchNumber(Search[1][1], Type) local count = gg.getResultCount() local result = gg.getResults(count) gg.clearResults() local data = {} local base = Search[1][2] if (count > 0) then for i, v in ipairs(result) do v.isUseful = true end for k=2, #Search do local tmp = {} local offset = Search[k][2] - base local num = Search[k][1] for i, v in ipairs(result) do tmp[#tmp+1] = {} tmp[#tmp].address = v.address + offset tmp[#tmp].flags = v.flags end tmp = gg.getValues(tmp) for i, v in ipairs(tmp) do if ( tostring(v.value) ~= tostring(num) ) then result[i].isUseful = false end end end for i, v in ipairs(result) do if (v.isUseful) then data[#data+1] = v.address end end if (#data > 0) then gg.toast('VALUE FOUND '..#data..' EDITED') local t = {} local base = Search[1][2] for i=1, #data do for k, w in ipairs(Write) do offset = w[2] - base t[#t+1] = {} t[#t].address = data[i] + offset t[#t].flags = Type t[#t].value = w[1] if (w[3] == true) then local item = {} item[#item+1] = t[#t] item[#item].freeze = true gg.addListItems(item) end end end gg.setValues(t) else gg.alert('VALUE NOT FOUND') return false end else gg.alert('VALUE NOT FOUND') return false end end
-AJLhax = 1
-AJLhax1 = 1
-AJLhax2 = 999
-AJLhax3 = 999
-AJLhax4 = 1
-AJLhax5 = 999
-AJLhax6 = 999
-AJLhax7 = 999
-AJLhax8 = 4
-      gg.setRanges(4)
-      local dataType = 16
-      local Name ="ANTENNA PURPLE"
-      local tb1 = {{256.0, 0}, {3.0, 40}, {5.0, 68}}
-      local tb2 = {{AJLhax, -80}, {AJLhax1, -76}, {AJLhax2,-72},  {AJLhax3, -68}, {AJLhax4, -64}, {AJLhax5, -28}, {AJLhax6, -24}, {AJLhax7, 28}, {AJLhax8, 20}}
-      SearchWrite(tb1, tb2, dataType)  
-gg.toast("Antenna Purple")
-end
-
-
-function yellow()
-function SearchWrite(Search, Write, Type) gg.clearResults() gg.setVisible(false) gg.searchNumber(Search[1][1], Type) local count = gg.getResultCount() local result = gg.getResults(count) gg.clearResults() local data = {} local base = Search[1][2] if (count > 0) then for i, v in ipairs(result) do v.isUseful = true end for k=2, #Search do local tmp = {} local offset = Search[k][2] - base local num = Search[k][1] for i, v in ipairs(result) do tmp[#tmp+1] = {} tmp[#tmp].address = v.address + offset tmp[#tmp].flags = v.flags end tmp = gg.getValues(tmp) for i, v in ipairs(tmp) do if ( tostring(v.value) ~= tostring(num) ) then result[i].isUseful = false end end end for i, v in ipairs(result) do if (v.isUseful) then data[#data+1] = v.address end end if (#data > 0) then gg.toast('VALUE FOUND '..#data..' EDITED') local t = {} local base = Search[1][2] for i=1, #data do for k, w in ipairs(Write) do offset = w[2] - base t[#t+1] = {} t[#t].address = data[i] + offset t[#t].flags = Type t[#t].value = w[1] if (w[3] == true) then local item = {} item[#item+1] = t[#t] item[#item].freeze = true gg.addListItems(item) end end end gg.setValues(t) else gg.alert('VALUE NOT FOUND') return false end else gg.alert('VALUE NOT FOUND') return false end end
-AJLhax = 50
-AJLhax1 = 999
-AJLhax2 = 1
-AJLhax3 = 999
-AJLhax4 = 1
-AJLhax5 = 999
-AJLhax6 = 999
-AJLhax7 = 999
-AJLhax8 = 4
-      gg.setRanges(4)
-      local dataType = 16
-      local Name ="ANTENNA WHITE"
-      local tb1 = {{256.0, 0}, {3.0, 40}, {5.0, 68}}
-      local tb2 = {{AJLhax, -80}, {AJLhax1, -76}, {AJLhax2,-72},  {AJLhax3, -68}, {AJLhax4, -64}, {AJLhax5, -28}, {AJLhax6, -24}, {AJLhax7, 28}, {AJLhax8, 20}}
-      SearchWrite(tb1, tb2, dataType)  
-gg.toast("Antenna White")
-end
-
-
-function orange()
-function SearchWrite(Search, Write, Type) gg.clearResults() gg.setVisible(false) gg.searchNumber(Search[1][1], Type) local count = gg.getResultCount() local result = gg.getResults(count) gg.clearResults() local data = {} local base = Search[1][2] if (count > 0) then for i, v in ipairs(result) do v.isUseful = true end for k=2, #Search do local tmp = {} local offset = Search[k][2] - base local num = Search[k][1] for i, v in ipairs(result) do tmp[#tmp+1] = {} tmp[#tmp].address = v.address + offset tmp[#tmp].flags = v.flags end tmp = gg.getValues(tmp) for i, v in ipairs(tmp) do if ( tostring(v.value) ~= tostring(num) ) then result[i].isUseful = false end end end for i, v in ipairs(result) do if (v.isUseful) then data[#data+1] = v.address end end if (#data > 0) then gg.toast('VALUE FOUND '..#data..' EDITED') local t = {} local base = Search[1][2] for i=1, #data do for k, w in ipairs(Write) do offset = w[2] - base t[#t+1] = {} t[#t].address = data[i] + offset t[#t].flags = Type t[#t].value = w[1] if (w[3] == true) then local item = {} item[#item+1] = t[#t] item[#item].freeze = true gg.addListItems(item) end end end gg.setValues(t) else gg.alert('VALUE NOT FOUND') return false end else gg.alert('VALUE NOT FOUND') return false end end
-AJLhax = 50
-AJLhax1 = 8
-AJLhax2 = 1
-AJLhax3 = 999
-AJLhax4 = 1
-AJLhax5 = 999
-AJLhax6 = 999
-AJLhax7 = 999
-AJLhax8 = 4
-      gg.setRanges(4)
-      local dataType = 16
-      local Name ="ANTENNA ORANGE"
-      local tb1 = {{256.0, 0}, {3.0, 40}, {5.0, 68}}
-      local tb2 = {{AJLhax, -80}, {AJLhax1, -76}, {AJLhax2,-72},  {AJLhax3, -68}, {AJLhax4, -64}, {AJLhax5, -28}, {AJLhax6, -24}, {AJLhax7, 28}, {AJLhax8, 20}}
-      SearchWrite(tb1, tb2, dataType)  
-gg.toast("Antenna Orange")
-end
-
-
-function red1()
-function SearchWrite(Search, Write, Type) gg.clearResults() gg.setVisible(false) gg.searchNumber(Search[1][1], Type) local count = gg.getResultCount() local result = gg.getResults(count) gg.clearResults() local data = {} local base = Search[1][2] if (count > 0) then for i, v in ipairs(result) do v.isUseful = true end for k=2, #Search do local tmp = {} local offset = Search[k][2] - base local num = Search[k][1] for i, v in ipairs(result) do tmp[#tmp+1] = {} tmp[#tmp].address = v.address + offset tmp[#tmp].flags = v.flags end tmp = gg.getValues(tmp) for i, v in ipairs(tmp) do if ( tostring(v.value) ~= tostring(num) ) then result[i].isUseful = false end end end for i, v in ipairs(result) do if (v.isUseful) then data[#data+1] = v.address end end if (#data > 0) then gg.toast('VALUE FOUND '..#data..' EDITED') local t = {} local base = Search[1][2] for i=1, #data do for k, w in ipairs(Write) do offset = w[2] - base t[#t+1] = {} t[#t].address = data[i] + offset t[#t].flags = Type t[#t].value = w[1] if (w[3] == true) then local item = {} item[#item+1] = t[#t] item[#item].freeze = true gg.addListItems(item) end end end gg.setValues(t) else gg.alert('VALUE NOT FOUND') return false end else gg.alert('VALUE NOT FOUND') return false end end
-AJLhax = 30
-AJLhax1 = 0
-AJLhax2 = 0
-AJLhax3 = 1
-AJLhax4 = 2
-AJLhax5 = 1
-AJLhax6 = 1
-AJLhax7 = 1
-AJLhax8 = 64
-      gg.setRanges(4)
-      local dataType = 16
-      local Name ="LIGHT RED"
-      local tb1 = {{256.0, 0}, {3.0, 40}, {5.0, 68}}
-      local tb2 = {{AJLhax, -80}, {AJLhax1, -76}, {AJLhax2,-72},  {AJLhax3, -68}, {AJLhax4, -64}, {AJLhax5, -28}, {AJLhax6, -24}, {AJLhax7, 28}, {AJLhax8, 20}}
-      SearchWrite(tb1, tb2, dataType)  
-gg.toast("Light Red")
-end
-
-
-function pink1()
-function SearchWrite(Search, Write, Type) gg.clearResults() gg.setVisible(false) gg.searchNumber(Search[1][1], Type) local count = gg.getResultCount() local result = gg.getResults(count) gg.clearResults() local data = {} local base = Search[1][2] if (count > 0) then for i, v in ipairs(result) do v.isUseful = true end for k=2, #Search do local tmp = {} local offset = Search[k][2] - base local num = Search[k][1] for i, v in ipairs(result) do tmp[#tmp+1] = {} tmp[#tmp].address = v.address + offset tmp[#tmp].flags = v.flags end tmp = gg.getValues(tmp) for i, v in ipairs(tmp) do if ( tostring(v.value) ~= tostring(num) ) then result[i].isUseful = false end end end for i, v in ipairs(result) do if (v.isUseful) then data[#data+1] = v.address end end if (#data > 0) then gg.toast('VALUE FOUND '..#data..' EDITED') local t = {} local base = Search[1][2] for i=1, #data do for k, w in ipairs(Write) do offset = w[2] - base t[#t+1] = {} t[#t].address = data[i] + offset t[#t].flags = Type t[#t].value = w[1] if (w[3] == true) then local item = {} item[#item+1] = t[#t] item[#item].freeze = true gg.addListItems(item) end end end gg.setValues(t) else gg.alert('VALUE NOT FOUND') return false end else gg.alert('VALUE NOT FOUND') return false end end
-AJLhax = 1
-AJLhax1 = 1
-AJLhax2 = 999
-AJLhax3 = 1
-AJLhax4 = 2
-AJLhax5 = 1
-AJLhax6 = 1
-AJLhax7 = 1
-AJLhax8 = 64
-      gg.setRanges(4)
-      local dataType = 16
-      local Name ="LIGHT PINK"
-      local tb1 = {{256.0, 0}, {3.0, 40}, {5.0, 68}}
-      local tb2 = {{AJLhax, -80}, {AJLhax1, -76}, {AJLhax2,-72},  {AJLhax3, -68}, {AJLhax4, -64}, {AJLhax5, -28}, {AJLhax6, -24}, {AJLhax7, 28}, {AJLhax8, 20}}
-      SearchWrite(tb1, tb2, dataType)  
-gg.toast("Light Pink")
-end
-
-
-function blue1()
-function SearchWrite(Search, Write, Type) gg.clearResults() gg.setVisible(false) gg.searchNumber(Search[1][1], Type) local count = gg.getResultCount() local result = gg.getResults(count) gg.clearResults() local data = {} local base = Search[1][2] if (count > 0) then for i, v in ipairs(result) do v.isUseful = true end for k=2, #Search do local tmp = {} local offset = Search[k][2] - base local num = Search[k][1] for i, v in ipairs(result) do tmp[#tmp+1] = {} tmp[#tmp].address = v.address + offset tmp[#tmp].flags = v.flags end tmp = gg.getValues(tmp) for i, v in ipairs(tmp) do if ( tostring(v.value) ~= tostring(num) ) then result[i].isUseful = false end end end for i, v in ipairs(result) do if (v.isUseful) then data[#data+1] = v.address end end if (#data > 0) then gg.toast('VALUE FOUND '..#data..' EDITED') local t = {} local base = Search[1][2] for i=1, #data do for k, w in ipairs(Write) do offset = w[2] - base t[#t+1] = {} t[#t].address = data[i] + offset t[#t].flags = Type t[#t].value = w[1] if (w[3] == true) then local item = {} item[#item+1] = t[#t] item[#item].freeze = true gg.addListItems(item) end end end gg.setValues(t) else gg.alert('VALUE NOT FOUND') return false end else gg.alert('VALUE NOT FOUND') return false end end
-AJLhax = 0
-AJLhax1 = 1
-AJLhax2 = 999
-AJLhax3 = 1
-AJLhax4 = 2
-AJLhax5 = 1
-AJLhax6 = 1
-AJLhax7 = 1
-AJLhax8 = 64
-      gg.setRanges(4)
-      local dataType = 16
-      local Name ="LIGHT BLUE"
-      local tb1 = {{256.0, 0}, {3.0, 40}, {5.0, 68}}
-      local tb2 = {{AJLhax, -80}, {AJLhax1, -76}, {AJLhax2,-72},  {AJLhax3, -68}, {AJLhax4, -64}, {AJLhax5, -28}, {AJLhax6, -24}, {AJLhax7, 28}, {AJLhax8, 20}}
-      SearchWrite(tb1, tb2, dataType)  
-gg.toast("Light Blue")
-end
-
-
-function cyan1()
-function SearchWrite(Search, Write, Type) gg.clearResults() gg.setVisible(false) gg.searchNumber(Search[1][1], Type) local count = gg.getResultCount() local result = gg.getResults(count) gg.clearResults() local data = {} local base = Search[1][2] if (count > 0) then for i, v in ipairs(result) do v.isUseful = true end for k=2, #Search do local tmp = {} local offset = Search[k][2] - base local num = Search[k][1] for i, v in ipairs(result) do tmp[#tmp+1] = {} tmp[#tmp].address = v.address + offset tmp[#tmp].flags = v.flags end tmp = gg.getValues(tmp) for i, v in ipairs(tmp) do if ( tostring(v.value) ~= tostring(num) ) then result[i].isUseful = false end end end for i, v in ipairs(result) do if (v.isUseful) then data[#data+1] = v.address end end if (#data > 0) then gg.toast('VALUE FOUND '..#data..' EDITED') local t = {} local base = Search[1][2] for i=1, #data do for k, w in ipairs(Write) do offset = w[2] - base t[#t+1] = {} t[#t].address = data[i] + offset t[#t].flags = Type t[#t].value = w[1] if (w[3] == true) then local item = {} item[#item+1] = t[#t] item[#item].freeze = true gg.addListItems(item) end end end gg.setValues(t) else gg.alert('VALUE NOT FOUND') return false end else gg.alert('VALUE NOT FOUND') return false end end
-AJLhax = 0
-AJLhax1 = 999
-AJLhax2 = 999
-AJLhax3 = 1
-AJLhax4 = 2
-AJLhax5 = 1
-AJLhax6 = 1
-AJLhax7 = 1
-AJLhax8 = 64
-      gg.setRanges(4)
-      local dataType = 16
-      local Name ="LIGHT CYAN"
-      local tb1 = {{256.0, 0}, {3.0, 40}, {5.0, 68}}
-      local tb2 = {{AJLhax, -80}, {AJLhax1, -76}, {AJLhax2,-72},  {AJLhax3, -68}, {AJLhax4, -64}, {AJLhax5, -28}, {AJLhax6, -24}, {AJLhax7, 28}, {AJLhax8, 20}}
-      SearchWrite(tb1, tb2, dataType)  
-gg.toast("Light Cyan")
-end
-
-function green1()
-function SearchWrite(Search, Write, Type) gg.clearResults() gg.setVisible(false) gg.searchNumber(Search[1][1], Type) local count = gg.getResultCount() local result = gg.getResults(count) gg.clearResults() local data = {} local base = Search[1][2] if (count > 0) then for i, v in ipairs(result) do v.isUseful = true end for k=2, #Search do local tmp = {} local offset = Search[k][2] - base local num = Search[k][1] for i, v in ipairs(result) do tmp[#tmp+1] = {} tmp[#tmp].address = v.address + offset tmp[#tmp].flags = v.flags end tmp = gg.getValues(tmp) for i, v in ipairs(tmp) do if ( tostring(v.value) ~= tostring(num) ) then result[i].isUseful = false end end end for i, v in ipairs(result) do if (v.isUseful) then data[#data+1] = v.address end end if (#data > 0) then gg.toast('VALUE FOUND '..#data..' EDITED') local t = {} local base = Search[1][2] for i=1, #data do for k, w in ipairs(Write) do offset = w[2] - base t[#t+1] = {} t[#t].address = data[i] + offset t[#t].flags = Type t[#t].value = w[1] if (w[3] == true) then local item = {} item[#item+1] = t[#t] item[#item].freeze = true gg.addListItems(item) end end end gg.setValues(t) else gg.alert('VALUE NOT FOUND') return false end else gg.alert('VALUE NOT FOUND') return false end end
-AJLhax = 0
-AJLhax1 = 999
-AJLhax2 = 1
-AJLhax3 = 1
-AJLhax4 = 2
-AJLhax5 = 1
-AJLhax6 = 1
-AJLhax7 = 1
-AJLhax8 = 64
-      gg.setRanges(4)
-      local dataType = 16
-      local Name ="LIGHT GREEN"
-      local tb1 = {{256.0, 0}, {3.0, 40}, {5.0, 68}}
-      local tb2 = {{AJLhax, -80}, {AJLhax1, -76}, {AJLhax2,-72},  {AJLhax3, -68}, {AJLhax4, -64}, {AJLhax5, -28}, {AJLhax6, -24}, {AJLhax7, 28}, {AJLhax8, 20}}
-      SearchWrite(tb1, tb2, dataType)  
-gg.toast("Light Green")
-end
-
-
-
-function aim()
-gg.clearResults()
-gg.setRanges(gg.REGION_ANONYMOUS)
-gg.setVisible(false)
-gg.searchNumber("7.00649232e-45F;0.69999998808F;0.69999998808F;0.69999998808F;0.69999998808F;7.00649232e-45F;0.5F;0.5F;0.5F;0.60000002384F;0.60000002384F", gg.TYPE_FLOAT)
-gg.refineNumber("0.5;0.69999998808", gg.TYPE_FLOAT)
-gg.getResults(9999)
-gg.editAll("350", gg.TYPE_FLOAT)
-gg.clearResults()
-gg.toast("ᴀᴄᴛɪᴠᴀᴛᴇ ᴀɪᴍʙᴏᴛ")
-end
-
-
-
-function body()
-gg.setRanges(gg.REGION_VIDEO)
-gg.searchNumber("1.0400390625",gg.POINTER_WRITABLE)
-gg.refineNumber("1.0400390625", 16)
-var = gg.getResults(9999)
-gg.editAll("999",gg.POINTER_WRITABLE)
-gg.clearResults()
-gg.toast("ᴀᴄᴛɪᴠᴀᴛᴇ ᴡʜɪᴛᴇ ʙᴏᴅʏ")
-end
-
-function rc()
-gg.setRanges(gg.REGION_ANONYMOUS) 
-gg.searchNumber("13;9;1",gg.POINTER_WRITABLE,false,gg.SIGN_EQUAL,0,-1,0) 
-gg.refineNumber("1", 16, false, 536870912, 0, -1, 0) 
-var = gg.getResults(99999) 
-gg.editAll("9.99999968e-22",gg.POINTER_WRITABLE) 
-gg.clearResults() 
-gg.toast("No Recoil Activate")
-end
-
-
-function walk()
-gg.setRanges(gg.REGION_ANONYMOUS)
-gg.setVisible(false)
-gg.searchNumber("4.28000020981", gg.TYPE_FLOAT)
-gg.refineNumber("4.28000020981", gg.TYPE_FLOAT)
-gg.getResults(9999)
-gg.editAll("6", gg.TYPE_FLOAT)
-gg.clearResults()
-gg.setRanges(gg.REGION_ANONYMOUS)
-gg.setVisible(false)
-gg.searchNumber("3.20000004768", gg.TYPE_FLOAT)
-gg.refineNumber("3.20000004768", gg.TYPE_FLOAT)
-gg.getResults(9999)
-gg.editAll("6", gg.TYPE_FLOAT)
-gg.clearResults()
-gg.toast("ᴀᴄᴛɪᴠᴀᴛᴇ sᴘᴇᴇᴅʜᴀᴄᴋ")
-end
-
-function jump()
-jump = gg.multiChoice({
-"🔸ʜɪɢʜ ᴊᴜᴍᴘ ᴍᴘ",
-"🔸ʜɪɢʜ ᴊᴜᴍᴘ ʙʀ",
-"🔸ʙᴀᴋ",
-})
-if jump == nil then
-gg.setVisible(false)
-else
-if jump[1] == true then MP() end
-if jump[2] == true then BR() end
-if jump[3] == nil then home() end
-end
-end
-	
-function MP()
-gg.setRanges(gg.REGION_ANONYMOUS)
-gg.searchNumber("7.5;0.8::5",gg.POINTER_WRITABLE)
-gg.refineNumber("0.8", 16)
-var = gg.getResults(9999)
-gg.editAll("4",gg.POINTER_WRITABLE)
-gg.clearResults()
-gg.toast("ᴀᴄᴛɪᴠᴀᴛᴇ ʜɪɢʜ ᴊᴜᴍᴘ ᴍᴘ")
-end
-
-function BR()
-gg.setRanges(gg.REGION_ANONYMOUS)
-gg.searchNumber("1,065,353,216;1,069,547,520;1,050,253,722:9",gg.TYPE_DWORD)
-gg.refineNumber("1,065,353,216", 4)
-var = gg.getResults(9999)
-gg.editAll("1,082,130,432",gg.TYPE_DWORD)
-gg.clearResults()
-gg.toast("ᴀᴄᴛɪᴠᴀᴛᴇ ʜɪɢʜ ᴊᴜᴍᴘ ʙʀ")
-end
-
-function neck()
-gg.setRanges(gg.REGION_C_ALLOC)
-gg.searchNumber("1.5~1.6;0.2~0.22::5", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
-revert = gg.getResults(6000, nil, nil, nil, nil, nil, nil, nil, nil)
-gg.editAll("-555", gg.TYPE_FLOAT)
-gg.clearResults()
-gg.toast("ᴀᴄᴛɪᴠᴀᴛᴇ ʟᴏɴɢ ʜᴇᴀᴅ")
-end
-
-function slide()
-function split(szFullString, szSeparator) local nFindStartIndex = 1 local nSplitIndex = 1 local nSplitArray = {} while true do local nFindLastIndex = string.find(szFullString, szSeparator, nFindStartIndex) if not nFindLastIndex then nSplitArray[nSplitIndex] = string.sub(szFullString, nFindStartIndex, string.len(szFullString)) break end nSplitArray[nSplitIndex] = string.sub(szFullString, nFindStartIndex, nFindLastIndex - 1) nFindStartIndex = nFindLastIndex + string.len(szSeparator) nSplitIndex = nSplitIndex + 1 end return nSplitArray end function xgxc(szpy, qmxg) for x = 1, #(qmxg) do xgpy = szpy + qmxg[x]["offset"] xglx = qmxg[x]["type"] xgsz = qmxg[x]["value"] xgdj = qmxg[x]["freeze"] if xgdj == nil or xgdj == "" then gg.setValues({[1] = {address = xgpy, flags = xglx, value = xgsz}}) else gg.addListItems({[1] = {address = xgpy, flags = xglx, freeze = xgdj, value = xgsz}}) end xgsl = xgsl + 1 xgjg = true end end function xqmnb(qmnb) gg.clearResults() gg.setVisible(false) gg.setRanges(qmnb[1]["memory"]) gg.searchNumber(qmnb[3]["value"], qmnb[3]["type"]) if gg.getResultCount() == 0 then gg.toast(qmnb[2]["name"] .. " Failed") else gg.refineNumber(qmnb[3]["value"], qmnb[3]["type"]) gg.refineNumber(qmnb[3]["value"], qmnb[3]["type"]) gg.refineNumber(qmnb[3]["value"], qmnb[3]["type"]) xxx=gg.getResultCount() if gg.getResultCount() == 0 then gg.toast(qmnb[2]["name"] .. " Failed") else sl = gg.getResults(999999) sz = gg.getResultCount() xgsl = 0 if sz > 999999 then sz = 999999 end for i = 1, sz do pdsz = true for v = 4, #(qmnb) do if pdsz == true then pysz = {} pysz[1] = {} pysz[1].address = sl[i].address + qmnb[v]["offset"] pysz[1].flags = qmnb[v]["type"] szpy = gg.getValues(pysz) pdpd = qmnb[v]["lv"] .. ";" .. szpy[1].value szpd = split(pdpd, ";") tzszpd = szpd[1] pyszpd = szpd[2] if tzszpd == pyszpd then pdjg = true pdsz = true else pdjg = false pdsz = false end end end if pdjg == true then szpy = sl[i].address xgxc(szpy, qmxg) end end if xgjg == true then gg.toast(qmnb[2]["name"] .. "\nLOVEYOU BITCH"..xxx.." U are cute : " .. xgsl .. "") else gg.toast(qmnb[2]["name"] .. " Failed") end end end gg.clearResults()  end
-
-qmnb = {{["memory"] = 32},{["name"] = "4"}, {["value"] = 30.0, ["type"] = 16},{["lv"] = 60.0, ["offset"] = -44, ["type"] = 16}, {["lv"] = 15.0, ["offset"] = -48, ["type"] = 16},}qmxg = {{["value"] = 100, ["offset"] = -4, ["type"] = 16},}xqmnb(qmnb)
-gg.alert("ᴀᴄᴛɪᴠᴀᴛᴇ ɪɴғɪɴɪᴛᴇ sʟɪᴅᴇ")
-end
-
-
-function hitbox()
--- Set the range for searching
-gg.setRanges(gg.REGION_ANONYMOUS)
-
--- Search for the float value
-gg.searchNumber("0.18500000238", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
-
--- Get results
-local results = gg.getResults(1000)
-
--- Debugging: Check if results were found
-if #results == 0 then
-    gg.alert("No results found for the value.")
-    return
-end
-
--- Debugging: Show number of results found
-gg.alert("Found " .. #results .. " results.")
-
--- Edit all results with the new value
-gg.editAll("1.18500000238", gg.TYPE_FLOAT)
-
--- Clear results
-gg.clearResults()
-
--- Show a toast message
-gg.toast("Hitbox Activated")
-end
-
-function aimlock()
-aimbot = gg.prompt({"ᴀɪᴍ ʟᴏᴄᴋ ᴀᴅᴊᴜsᴛ sᴇᴛᴛɪɴɢs [1; 50]"}, nil, {"number"})
-unity = gg.getRangesList("libunity.so")[1].start 
-setValues(unity + 0x96F957C, 4, "~A8 LDR S0, [PC,#0x8]") --Sniper, Shotgun
-setValues(unity + 0x96F957C + 4, 4, "~A8 RET")
-setValues(unity + 0x96F957C + 8, 16, aimbot[1])
-unity = gg.getRangesList("libunity.so")[1].start 
-setValues(unity + 0x846BD34, 4, "~A8 LDR S0, [PC,#0x8]") --AR, Smg, Lmg, Pistol
-setValues(unity + 0x846BD34 + 4, 4, "~A8 RET")
-setValues(unity + 0x846BD34 + 8, 16, aimbot[1])
-gg.setRanges(gg.REGION_ANONYMOUS)
-gg.setVisible(false)
-gg.searchNumber("7.00649232e-45F;0.69999998808F;0.69999998808F;0.69999998808F;0.69999998808F;7.00649232e-45F;0.5F;0.5F;0.5F;0.60000002384F;0.60000002384F", gg.TYPE_FLOAT)
-gg.refineNumber("0.5;0.69999998808", gg.TYPE_FLOAT)
-gg.getResults(9999)
-gg.editAll("80", gg.TYPE_FLOAT)
-gg.clearResults()
-gg.toast("ᴀᴄᴛɪᴠᴀᴛᴇ ᴀɪᴍʙᴏᴛ")
-end
-
-function sniper()
-gg.setRanges(4 | 32 | -2080896)
-ck1 = {{256.0, 0}, {3.0, 40}, {5.0, 68}}
-ck2 = {{999.0, -80}, {0, -76}, {0, -72}, {999.0, -68}, {3.0, 24}, {999.0, 28}}
-czk(ck1, ck2, 16)
-gg.toast("𝑹𝒆𝒅 𝑳𝒊𝒏𝒆")
-end
-
-function jumpv2()
-jump1 = gg.prompt({"HighJump Adjustable [1; 200]"}, {[1] = data}, {[1] = 'number'})
-if jump1 == nil then else
-data = jump1[1]
-
-
-function SearchWrite(Search, Write, Type) gg.clearResults() gg.setVisible(false) gg.searchNumber(Search[1][1], Type) local count = gg.getResultCount() local result = gg.getResults(count) gg.clearResults() local data = {} local base = Search[1][2] if (count > 0) then for i, v in ipairs(result) do v.isUseful = true end for k=2, #Search do local tmp = {} local offset = Search[k][2] - base local num = Search[k][1] for i, v in ipairs(result) do tmp[#tmp+1] = {} tmp[#tmp].address = v.address + offset tmp[#tmp].flags = v.flags end tmp = gg.getValues(tmp) for i, v in ipairs(tmp) do if ( tostring(v.value) ~= tostring(num) ) then result[i].isUseful = false end end end for i, v in ipairs(result) do if (v.isUseful) then data[#data+1] = v.address end end if (#data > 0) then gg.toast('VALUE FOUND '..#data..' EDITED') local t = {} local base = Search[1][2] for i=1, #data do for k, w in ipairs(Write) do offset = w[2] - base t[#t+1] = {} t[#t].address = data[i] + offset t[#t].flags = Type t[#t].value = w[1] if (w[3] == true) then local item = {} item[#item+1] = t[#t] item[#item].freeze = true gg.addListItems(item) end end end gg.setValues(t) else gg.alert('VALUE NOT FOUND') return false end else gg.alert('VALUE NOT FOUND') return false end end
-ShadowMODZ = tostring(jump1[1])
-      gg.setRanges(32)
-      local ShadowMODZ3 = 16
-      local Name ="HIGHJUMP"
-      local ShadowMODZ1 = {{36.0, 0}, {50.0, -44}, {10.0, -36}}
-      local ShadowMODZ2 = {{ShadowMODZ, -28}}
-      SearchWrite(ShadowMODZ1, ShadowMODZ2, ShadowMODZ3)
-gg.toast("Hɪɢʜ Jᴜᴍᴘ Aᴄᴛɪᴠᴀᴛᴇ")
-end
-end
-
-
-function whv2()
-gg.setRanges(gg.REGION_VIDEO)
-gg.searchNumber("338558987~338590990", gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1, 0)
-revert = gg.getResults(9999, nil, nil, nil, nil, nil, nil, nil, nil)
-gg.editAll("2", gg.TYPE_DWORD)
-gg.clearResults()
-gg.toast("ᴀᴄᴛɪᴠᴀᴛᴇ ᴡᴀʟʟʜᴀᴄᴋ sɴᴀᴘ")
-end
-
-function reload()
-local so = gg.getRangesList('libunity.so')[1].start
-local py = 0x96D4868
-gg.setValues({{address = so + py, flags = gg.TYPE_QWORD, value = "h002C40BCC0035FD6"}})
-gg.toast("NO RELOAD ACTIVATED")
-end
-
-
-function shot()
-gg.setRanges(gg.REGION_C_BSS)
-gg.setVisible(false)
-gg.searchNumber("4,611,686,019,501,129,728", gg.TYPE_QWORD)
-gg.refineNumber("4,611,686,019,501,129,728", gg.TYPE_QWORD)
-gg.getResults(9999999)
-gg.editAll("0", gg.TYPE_QWORD)
-gg.clearResults()
-gg.setRanges(gg.REGION_C_BSS)
-gg.setVisible(false)
-gg.searchNumber("3,497,450,139,768,418,399", gg.TYPE_QWORD)
-gg.refineNumber("3,497,450,139,768,418,399", gg.TYPE_QWORD)
-gg.getResults(9999999)
-gg.editAll("0", gg.TYPE_QWORD)
-gg.clearResults()
-gg.setRanges(gg.REGION_C_BSS)
-gg.setVisible(false)
-gg.searchNumber("4,572,054,341,912,048,435", gg.TYPE_QWORD)
-gg.refineNumber("4,572,054,341,912,048,435", gg.TYPE_QWORD)
-gg.getResults(9999999)
-gg.editAll("0", gg.TYPE_QWORD)
-gg.clearResults()
-gg.setRanges(gg.REGION_C_BSS)
-gg.setVisible(false)
-gg.searchNumber("3,746,994,890,844,667,904", gg.TYPE_QWORD)
-gg.refineNumber("3,746,994,890,844,667,904", gg.TYPE_QWORD)
-gg.getResults(9999999)
-gg.editAll("0", gg.TYPE_QWORD)
-gg.clearResults()
-gg.setRanges(gg.REGION_C_BSS)
-gg.setVisible(false)
-gg.searchNumber("9,187,343,237,679,939,583", gg.TYPE_QWORD)
-gg.refineNumber("9,187,343,237,679,939,583", gg.TYPE_QWORD)
-gg.getResults(9999999)
-gg.editAll("0", gg.TYPE_QWORD)
-gg.clearResults()
-gg.setRanges(gg.REGION_C_BSS)
-gg.setVisible(false)
-gg.searchNumber("4,094,254,846,621,890,327", gg.TYPE_QWORD)
-gg.refineNumber("4,094,254,846,621,890,327", gg.TYPE_QWORD)
-gg.getResults(9999999)
-gg.editAll("0", gg.TYPE_QWORD)
-gg.clearResults()
-gg.setRanges(gg.REGION_C_BSS)
-gg.setVisible(false)
-gg.searchNumber("4,683,734,607,009,413,071", gg.TYPE_QWORD)
-gg.refineNumber("4,683,734,607,009,413,071", gg.TYPE_QWORD)
-gg.getResults(9999999)
-gg.editAll("0", gg.TYPE_QWORD)
-gg.clearResults()
-gg.setRanges(gg.REGION_C_BSS)
-gg.setVisible(false)
-gg.searchNumber("2", gg.TYPE_DWORD)
-gg.refineNumber("-999", gg.TYPE_DWORD)
-gg.getResults(9999999)
-gg.clearResults()
-gg.editAll("0", gg.TYPE_QWORD)
-gg.toast("WALL SHOT ACTIVATED")
-end
-
-function wallhack()
-function SearchWrite(Search, Write, Type) gg.clearResults() gg.setVisible(false) gg.searchNumber(Search[1][1], Type) local count = gg.getResultCount() local result = gg.getResults(count) gg.clearResults() local data = {} local base = Search[1][2] if (count > 0) then for i, v in ipairs(result) do v.isUseful = true end for k=2, #Search do local tmp = {} local offset = Search[k][2] - base local num = Search[k][1] for i, v in ipairs(result) do tmp[#tmp+1] = {} tmp[#tmp].address = v.address + offset tmp[#tmp].flags = v.flags end tmp = gg.getValues(tmp) for i, v in ipairs(tmp) do if ( tostring(v.value) ~= tostring(num) ) then result[i].isUseful = false end end end for i, v in ipairs(result) do if (v.isUseful) then data[#data+1] = v.address end end if (#data > 0) then gg.toast('VALUE FOUND '..#data..' EDITED') local t = {} local base = Search[1][2] for i=1, #data do for k, w in ipairs(Write) do offset = w[2] - base t[#t+1] = {} t[#t].address = data[i] + offset t[#t].flags = Type t[#t].value = w[1] if (w[3] == true) then local item = {} item[#item+1] = t[#t] item[#item].freeze = true gg.addListItems(item) end end end gg.setValues(t) else gg.alert('VALUE NOT FOUND') return false end else gg.alert('VALUE NOT FOUND') return false end end
-ShadowMODZ = -2.03999996185
-      gg.setRanges(32)
-      local ShadowMODZ3 = 16
-      local Name ="SLOWFALL"
-      local ShadowMODZ1 = {{36.0, 0}, {50.0, -44}, {10.0, -36}}
-      local ShadowMODZ2 = {{ShadowMODZ, -40}}
-      SearchWrite(ShadowMODZ1, ShadowMODZ2, ShadowMODZ3)
-gg.toast("Sʟᴏᴡ Fᴀʟʟ Aᴄᴛɪᴠᴀᴛᴇ")
-end
-
-function frog()
-function SearchWrite(Search, Write, Type)
-    gg.clearResults()         -- Clear any previous search results
-    gg.setVisible(false)     -- Hide the GG interface
-    
-    -- Perform the initial search
-    gg.searchNumber(Search[1][1], Type)
-    local count = gg.getResultCount()
-    local result = gg.getResults(count)
-    gg.clearResults()        -- Clear search results to prevent clutter
-
-    local data = {}
-    local base = Search[1][2]
-
-    if count > 0 then
-        -- Mark results as potentially useful
-        for i, v in ipairs(result) do
-            v.isUseful = true
-        end
-
-        -- Filter results based on additional search criteria
-        for k = 2, #Search do
-            local tmp = {}
-            local offset = Search[k][2] - base
-            local num = Search[k][1]
-
-            for i, v in ipairs(result) do
-                tmp[#tmp + 1] = { address = v.address + offset, flags = v.flags }
-            end
-
-            tmp = gg.getValues(tmp)
-
-            -- Validate results based on the additional search
-            for i, v in ipairs(tmp) do
-                if tostring(v.value) ~= tostring(num) then
-                    result[i].isUseful = false
-                end
-            end
-        end
-
-        -- Collect addresses of results that passed filtering
-        for i, v in ipairs(result) do
-            if v.isUseful then
-                data[#data + 1] = v.address
-            end
-        end
-
-        -- If any useful addresses were found, write new values
-        if #data > 0 then
-            gg.toast('VALUE FOUND ' .. #data .. ' EDITED')
-            local t = {}
-            local base = Search[1][2]
-
-            -- Prepare values to write
-            for i = 1, #data do
-                for k, w in ipairs(Write) do
-                    local offset = w[2] - base
-                    local item = { address = data[i] + offset, flags = Type, value = w[1] }
-
-                    -- Optionally freeze values if specified
-                    if w[3] == true then
-                        item.freeze = true
-                        gg.addListItems({ item })
-                    end
-
-                    t[#t + 1] = item
-                end
-            end
-
-            -- Write values to memory
-            gg.setValues(t)
-        else
-            gg.alert('VALUE NOT FOUND')
-            return false
-        end
-    else
-        gg.alert('VALUE NOT FOUND')
-        return false
-    end
-end
-
--- Example parameters for the script
-local ShadowMODZ = -1.03999996185
-local ShadowMODZ1 = 99999
-gg.setRanges(32)  -- Set the memory range to use
-
--- Define search and write parameters
-local Search = {{36.0, 0}, {50.0, -44}, {10.0, -36}}
-local Write = {{ShadowMODZ, -40}, {ShadowMODZ1, 396}}
-local Type = gg.TYPE_FLOAT
-
--- Call the SearchWrite function
-SearchWrite(Search, Write, Type)
-
-gg.toast("Fʀᴏɢ Jᴜᴍᴘ Aᴄᴛɪᴠᴀᴛᴇ")
-end
-
-function potato()
-gg.setRanges(gg.REGION_VIDEO)
-gg.setVisible(false)
-gg.searchNumber("16", gg.TYPE_FLOAT)
-gg.refineNumber("16", gg.TYPE_FLOAT)
-gg.getResults(9999)
-gg.editAll("0", gg.TYPE_FLOAT)
-gg.clearResults()
-gg.toast("POTATO GRAPHICS ACTIVATED")
-end
-
-function static()
-gg.setRanges(gg.REGION_ANONYMOUS)
-gg.searchNumber("4.0F", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
-local results = gg.getResults(100)
-if #results == 0 then
-    gg.alert("No results found for the value.")
-    return
-end
-gg.alert("Found " .. #results .. " results.")
-gg.editAll("9999999", gg.TYPE_FLOAT)
-gg.clearResults()
-gg.toast("Hitbox Activated")
-end
-
-function wallclimb()
-function SearchWrite(Search, Write, Type) gg.clearResults() gg.setVisible(false) gg.searchNumber(Search[1][1], Type) local count = gg.getResultCount() local result = gg.getResults(count) gg.clearResults() local data = {} local base = Search[1][2] if (count > 0) then for i, v in ipairs(result) do v.isUseful = true end for k=2, #Search do local tmp = {} local offset = Search[k][2] - base local num = Search[k][1] for i, v in ipairs(result) do tmp[#tmp+1] = {} tmp[#tmp].address = v.address + offset tmp[#tmp].flags = v.flags end tmp = gg.getValues(tmp) for i, v in ipairs(tmp) do if ( tostring(v.value) ~= tostring(num) ) then result[i].isUseful = false end end end for i, v in ipairs(result) do if (v.isUseful) then data[#data+1] = v.address end end if (#data > 0) then gg.toast('VALUE FOUND '..#data..' EDITED') local t = {} local base = Search[1][2] for i=1, #data do for k, w in ipairs(Write) do offset = w[2] - base t[#t+1] = {} t[#t].address = data[i] + offset t[#t].flags = Type t[#t].value = w[1] if (w[3] == true) then local item = {} item[#item+1] = t[#t] item[#item].freeze = true gg.addListItems(item) end end end gg.setValues(t) else gg.alert('VALUE NOT FOUND') return false end else gg.alert('VALUE NOT FOUND') return false end end
-EPICSXZ = 4
-      gg.setRanges(32)
-      local Epicsxz3 = 16
-      local Name ="WALLCILMB"
-      local Epicsxz1 = {{0.05000000075, 0}, {1.0, -12}}
-      local Epicsxz2 = {{EPICSXZ, 4}}
-      SearchWrite(Epicsxz1, Epicsxz2, Epicsxz3)
-gg.toast("Wᴀʟʟ Cʟɪᴍʙ Aᴄᴛɪᴠᴀᴛᴇ")
-end
-
-function nosmoke()
-gg.setRanges(gg.REGION_ANONYMOUS)
-gg.searchNumber("300000045",gg.TYPE_DWORD)
-gg.refineNumber("300000045", 4)
-var = gg.getResults(9999)
-gg.editAll("0",gg.TYPE_DWORD)
-gg.clearResults()
-gg.setRanges(gg.REGION_ANONYMOUS)
-gg.searchNumber("300000065",gg.TYPE_DWORD)
-gg.refineNumber("300000065", 4)
-var = gg.getResults(9999)
-gg.editAll("0",gg.TYPE_DWORD)
-gg.clearResults()
-gg.setRanges(gg.REGION_ANONYMOUS)
-gg.searchNumber("300000090",gg.TYPE_DWORD)
-gg.refineNumber("300000090", 4)
-var = gg.getResults(9999)
-gg.editAll("0",gg.TYPE_DWORD)
-gg.clearResults()
-gg.toast("NO SMOKE ACTIVATED")
-end
-
-function bigbody()
-gg.setRanges(gg.REGION_C_ALLOC)
-gg.searchNumber("1067534200D~3000000000D;-0;0.1~0.99;1;1;1::37", gg.TYPE_FLOAT)
-gg.refineNumber("1", gg.TYPE_FLOAT)
-gg.getResults(99999, nil, nil, nil, nil, nil, nil, nil, nil)
-gg.editAll("2.5", gg.TYPE_FLOAT)
-gg.clearResults()
-gg.toast('BIG BODY ACTIVATED') 
-end
-
-function unlipump()
-gg.setRanges(gg.REGION_ANONYMOUS)
-gg.searchNumber("4,692,750,814,951,851,950", gg.TYPE_QWORD)
-gg.getResults(9999)
-gg.editAll("4,692,750,814,937,088,000", gg.TYPE_QWORD)
-gg.clearResults()
-gg.toast("UNLI PUMP ACTIVATED")
-			end
-function flyhack()
-gg.setRanges(gg.REGION_C_ALLOC)
-gg.searchNumber("20.567891011", gg.TYPE_FLOAT)
-gg.searchNumber("20.567891011",gg.TYPE_FLOAT,false,gg.SIGN_FUZZY_EQUAL,0,-1)
-var = gg.getResults(1000)
-gg.editAll("0.25",gg.TYPE_FLOAT)
-gg.clearResults()
-gg.setRanges(gg.REGION_C_ALLOC)
-gg.searchNumber("0.05;0.25;0.4999999702:9", gg.TYPE_FLOAT)
-gg.searchNumber("0.05",gg.TYPE_FLOAT,false,gg.SIGN_FUZZY_EQUAL,0,-1)
-var = gg.getResults(1000)
-gg.editAll("3.567891011",gg.TYPE_FLOAT)
-gg.clearResults()
-gg.toast("FLY HACK ACTIVATED")
-end
-
-function fov()
-gg.setRanges(gg.REGION_ANONYMOUS)
-gg.searchNumber("44.0;44.0;60.0;45.0;0.20000000298:33", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
-gg.searchNumber("44", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
-gg.getResults(950)
-gg.editAll("98", gg.TYPE_FLOAT)
-gg.clearResults()
-gg.toast("HIGH FOV ACTIVATED")
-end
+gg.toast("Activated")
+end,
+
+        
+function()
+end
+        
+),
+
+    },{
+changan.text("𝚃𝚑𝚊𝚗𝚔𝚜 𝙵𝚘𝚛 𝚄𝚜𝚎 𝚂𝚌𝚛𝚒𝚙𝚝"),
+changan.button(
+    "Telegram Channel",
+    function()
+        local link = "https://t.me/PIR4T3MODZ"
+        gg.copyText(link)
+        gg.toast("Tautan telah disalin ke clipboard:\n" .. link)
+    end,
+    "/sdcard/Starcool/telegram"
 			
-function EXIT()
-gg.toast("sᴄʀɪᴘᴛ ᴛᴇʀᴍɪɴᴀᴛᴇᴅ")
-os.exit() 
-end
+),
 
+changan.button("Order Java x lua Script",
+function()
+local link = "https://t.me/SHADOWH4XX"
+        gg.copyText(link)
+        gg.toast("Tautan telah disalin ke clipboard:\n" .. link)
+        end,
+ "/sdcard/Starcool/order"
+ ),
+
+						changan.button("Exit Menu",function()
+				window:removeView(floatWindow)
+				luajava.setFloatingWindowHide(false)
+				tuichu=1
+				end,
+				            "/sdcard/Starcool/exitmod"
+ 
+				
+				),
+				  
+		},{
+			
+		},
+	
+	
+	})
+
+
+if ylfunc~=nil then ylfunc() end
 while true do
-if gg.isVisible(true) then
-ShadowMODZ = 1
-gg.setVisible(false) end
-if ShadowMODZ == 1 then
-home() 
+if tuichu==1 then break end
+if 音量键 then
+jianting3(qiehuan)
+end gg.sleep(300)
 end
-end
-
-
-
+luajava.setFloatingWindowHide(false)
